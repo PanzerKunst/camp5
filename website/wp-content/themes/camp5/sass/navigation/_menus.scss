@@ -1,0 +1,40 @@
+.main-navigation {
+	clear: both;
+}
+
+/* Small menu. */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	& .nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	& .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}

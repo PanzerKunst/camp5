@@ -1,0 +1,30 @@
+// @import "../layout/content-sidebar";
+// @import "../layout/sidebar-content";
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+@import "primary/posts-and-pages";
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+@import "primary/asides";
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+@import "primary/comments";
+
+/*--------------------------------------------------------------
+10.4 Index page
+--------------------------------------------------------------*/
+@import "primary/index";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.no-transition {
+  @include transition(none !important);
+}
