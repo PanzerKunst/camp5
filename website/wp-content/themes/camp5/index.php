@@ -15,15 +15,14 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
-
         <?php wp_nav_menu(
             array(
-                'theme_location'  => 'primary',
+                'theme_location' => 'primary',
+                'menu_class' => 'menu styleless',
+                'menu_id' => 'all-pages-as-single',
                 'walker' => new Walker_Index_All_Pages_As_Single()
             )
         ); ?>
-
     </main>
 </div>
 

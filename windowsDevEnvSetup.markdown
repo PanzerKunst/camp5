@@ -18,11 +18,9 @@
 
 4. Restart PHP, open the test.php page in a browser and check that the XDebug extension is loaded.
 
-5. Have a look at [the IntelliJ IDEA documentation on how to integrate XDebug](https://www.jetbrains.com/idea/help/configuring-xdebug.html), and check that it's compatible with the next steps below:
+5. Have a look at [the IntelliJ IDEA documentation on how to integrate XDebug](https://www.jetbrains.com/idea/help/configuring-xdebug.html)
 
-6. Open `php.ini`, and check the port for XDebug
-
-7. Create a remote config, and connect it to the port above
+8. In the menu, click on `Run > Start Listen for PHP Debug Connections`
 
 
 # Nginx installation

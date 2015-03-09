@@ -1,40 +1,159 @@
+/* TODO: remove
+.site-header button,
 .main-navigation {
-	clear: both;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+} */
+
+#masthead.scrolled-down {
+  > #menu-btn-wrapper,
+  > #site-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  > #menu-btn-wrapper {
+    margin-top: 0;
+
+    > button {
+      @include hdpi-sprite($color__background-dark);
+    }
+  }
+
+  > #site-navigation {
+    background-color: $color__background-dark;
+
+    width: 100%;
+  }
 }
 
-/* Small menu. */
-.menu-toggle {
-	display: none;
+$menu-button-size: 40px;
+
+$nav-bar-height: $menu-button-size;
+$nav-bar-height-large-screen: 72px;
+
+#menu-btn-wrapper {
+  z-index: $z-index-menu-button;
+
+  margin-top: -$nav-bar-height;
+  @include large-screen {
+    margin-top: -$nav-bar-height-large-screen;
+  }
+
+  > button {
+    $menu-button-image-location-x: 0;
+    $menu-button-image-location-y: 0;
+
+    @include hdpi-sprite(transparentize($color__background-dark, 0.2));
+    background-position: $menu-button-image-location-x $menu-button-image-location-y;
+    @include hidpi {
+      background-position: half-pos($menu-button-image-location-x, $menu-button-image-location-y);
+    }
+
+    width: $menu-button-size;
+    height: $menu-button-size;
+
+    display: block; // To avoid space in wrapper;
+
+    @include large-screen {
+      display: none;
+    }
+  }
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
+#site-navigation {
+  clear: both;
 
-	.main-navigation ul {
-		display: none;
-	}
+  z-index: $z-index-menu;
+  position: relative; // For z-index to be taken into account
+
+  background-color: $color__background-dark;
+  @include large-screen {
+    background-color: transparentize($color__background-dark, 0.2);
+  }
+
+  > .menu-all-pages-as-single-container {
+    text-align: center;
+    visibility: hidden;
+    overflow: hidden;
+
+    @include large-screen {
+      height: $nav-bar-height-large-screen;
+    }
+
+    @include large-screen {
+      visibility: visible;
+    }
+
+    a {
+      color: $color__border-input;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: lighten($color__border-input, 10%);
+      }
+
+      &:after {
+        content: "";
+      }
+    }
+  }
+
+  ul {
+    padding-top: 0.5em;
+  }
+
+  @include medium-screen {
+    ul {
+      display: inline-block;
+    }
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  @include large-screen {
+    font-size: 16px;
+
+    ul {
+      display: table;
+      width: 100%;
+    }
+
+    li {
+      display: table-cell;
+      vertical-align: middle;
+
+      padding: 0 0.5em;
+    }
+
+    a {
+      max-width: 9em;
+      display: inline-block; // For "width" declaration to work
+    }
+  }
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+  .site-main & {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+  }
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
+  & .nav-previous {
+    float: left;
+    width: 50%;
+  }
 
-	& .nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	& .nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
+  & .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+  }
 }

@@ -1,0 +1,42 @@
+#all-pages-as-single {
+  ul, ol {
+    margin-bottom: $paragraph-bottom-margin;
+  }
+
+  > .menu-item {
+    margin-top: 0;
+
+    $page-item-padding: 4em;
+    padding: $page-item-padding 0 ($page-item-padding - $paragraph-bottom-margin) 0;
+    @include medium-screen {
+      padding: $page-item-padding*$medium-screen-ratio-m 0 ($page-item-padding * $medium-screen-ratio-m - $paragraph-bottom-margin) 0;
+    }
+    @include large-screen {
+      padding: $page-item-padding*$large-screen-ratio-m 0 ($page-item-padding * $large-screen-ratio-m - $paragraph-bottom-margin) 0;
+    }
+
+    &:first-child {
+      > h2 {
+        display: none;
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: $color__background-screen;
+    }
+
+    > h2,
+    > article {
+      @include centered-content;
+    }
+
+    > h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+.dark-bg {
+  background-color: $color__background-dark;
+  color: white;
+}

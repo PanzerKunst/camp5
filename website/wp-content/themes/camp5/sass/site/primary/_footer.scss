@@ -1,0 +1,17 @@
+.site-footer {
+  > p {
+    text-align: center;
+
+    margin: 0;
+
+    $site-footer-padding: 4em;
+
+    padding: $site-footer-padding 0;
+    @include medium-screen {
+      padding: $site-footer-padding*$medium-screen-ratio-m 0;
+    }
+    @include large-screen {
+      padding: $site-footer-padding*$large-screen-ratio-m 0;
+    }
+  }
+}

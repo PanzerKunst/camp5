@@ -1,38 +1,76 @@
+
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
+
+  // Always display the vertical scrollbar
+  overflow-y: scroll;
 }
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+  background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: Montserrat, sans-serif;
+  letter-spacing: -0.02em;
+
+  $font-size-base: 0.875em;
+
+  font-size: $font-size-base;
+
+  @include medium-screen {
+    font-size: $font-size-base * $medium-screen-ratio-m;
+  }
+  @include large-screen {
+    font-size: $font-size-base * $large-screen-ratio-m;
+  }
+}
+
+p,
+span,
+li,
+a,
+label {
+  line-height: $font__line-height-body;
+}
+
+p {
+  margin-top: 0;
 }
 
 blockquote, q {
-	quotes: "" "";
+  quotes: "" "";
 
-	&:before,
-	&:after {
-		content: "";
-	}
+  &:before,
+  &:after {
+    content: "";
+  }
 }
 
 hr {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+  background-color: $color__background-hr;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+.centered-contents {
+  text-align: center;
 }
 
 @import "lists";
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
 }
 
 @import "tables";

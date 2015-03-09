@@ -1,4 +1,26 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
 
+$small-content-width: 320px;
+$medium-content-width: $small-content-width * 2;
+$large-content-width: $small-content-width * 3;
+
 $spacer-unit-size: 14px;
+$default-spacer-size: 10vw;
+$default-spacer-size-large-screen: $spacer-unit-size * 7;
+
+$medium-screen-ratio-s: 1.2;
+$large-screen-ratio-s: 1.4;
+
+$medium-screen-ratio-m: 1.3;
+$large-screen-ratio-m: 1.6;
+
+$medium-screen-ratio-l: 1.7;
+$large-screen-ratio-l: 2.5;
+
+$paragraph-bottom-margin: 1.5em;
+
+$default-animation-duration: 0.5s;
+
+$z-index-menu: 10;
+$z-index-menu-button: $z-index-menu + 1;

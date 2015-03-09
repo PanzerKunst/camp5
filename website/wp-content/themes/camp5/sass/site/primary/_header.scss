@@ -1,0 +1,41 @@
+html,
+body,
+#page,
+.site-header {
+  height: 100%; // For child's "height: 100%" declaration to work
+}
+
+.site-branding {
+  height: 100%;
+
+  /* TODO: remove
+  display: flex;
+  flex-direction: column; */
+
+  background: url("/wp-content/themes/camp5/images/rv-project.jpg") center center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+
+
+  // TODO: remove flex: 0 1 100%;
+
+  > span,
+  > h1,
+  > p {
+    @include centered-content;
+
+    color: white;
+    text-shadow: 0 0 0.5em $color__background-dark;
+  }
+
+  > h1,
+  > p {
+    position: relative;
+    top: 10%;
+  }
+  > p {
+    text-align: center;
+    font-size: 1.5em;
+  }
+}

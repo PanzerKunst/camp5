@@ -16,14 +16,19 @@
 @import "primary/comments";
 
 /*--------------------------------------------------------------
-10.4 Index page
+10.4 Header
+--------------------------------------------------------------*/
+@import "primary/header";
+
+/*--------------------------------------------------------------
+10.5 Footer
+--------------------------------------------------------------*/
+@import "primary/footer";
+
+/*--------------------------------------------------------------
+10.6 Index page
 --------------------------------------------------------------*/
 @import "primary/index";
-
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 .no-transition {
   @include transition(none !important);

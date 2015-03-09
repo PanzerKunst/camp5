@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 
         eslint: {
             target: [
-                "javascripts/**/*.js"
+                "wp-content/themes/camp5/js/camp5/**/*.js"
             ],
             options: {
                 configFile: "eslint.json"
