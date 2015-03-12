@@ -1,3 +1,9 @@
+@mixin link-icon {
+  vertical-align: super;
+  font-size: 0.6em;
+  margin-left: 0.1em;
+}
+
 a {
   color: $color__link;
   text-decoration: none;
@@ -19,24 +25,24 @@ a {
   &:hover,
   &:active {
     outline: 0;
-  }
-}
 
-a[target="_blank"] {
-  &:hover,
-  &:active {
     &:after {
-      @include icon-font($fa-var-external-link-square);
-      vertical-align: super;
-      font-size: 0.6em;
-      margin-left: 0.1em;
+      @include link-icon;
+      @include icon-font($fa-var-link);
     }
   }
-}
 
-a[href^="#"]:after {
-  @include icon-font($fa-var-arrows-v);
-  vertical-align: super;
-  font-size: 0.6em;
-  margin-left: 0.1em;
+  &[target="_blank"] {
+    &:hover,
+    &:active {
+      &:after {
+        @include icon-font($fa-var-external-link-square);
+      }
+    }
+  }
+
+  &[href^="#"]:after {
+    @include link-icon;
+    @include icon-font($fa-var-arrows-v);
+  }
 }

@@ -29,6 +29,7 @@ module.exports = function (grunt) {
                     // Common
 
                     // Services
+                    "wp-content/themes/camp5/js/camp5/services/browser.js",
 
                     // Models
 

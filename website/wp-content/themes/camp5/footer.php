@@ -11,8 +11,8 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer dark-bg" role="contentinfo">
-        <p>Do you have a question?<br/>
-            Ask it in <a href="https://www.facebook.com/groups/862995873723559" target="_blank">the Camp5 Facebook group</a>!</p>
+        <p>Har du en fråga?<br/>
+            Ställa den i <a href="https://www.facebook.com/groups/camp5" target="_blank">Camp5 Facebook-gruppen</a>!</p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

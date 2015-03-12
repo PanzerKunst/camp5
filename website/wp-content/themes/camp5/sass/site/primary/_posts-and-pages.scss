@@ -2,10 +2,6 @@
   display: block;
 }
 
-.hentry {
-  margin: 0 0 1.5em;
-}
-
 .byline,
 .updated:not(.published) {
   display: none;
@@ -25,6 +21,58 @@
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.page {
+  #masthead {
+    height: auto;
+
+    > #menu-btn-wrapper,
+    > #site-navigation {
+      display: none;
+    }
+  }
+
+  .site-branding {
+    background-image: none;
+
+    a {
+      color: $color__text-main;
+      text-shadow: none;
+    }
+
+    > h1,
+    > p {
+      display: none;
+    }
+  }
+
+  #colophon {
+    display: none;
+  }
+
+  .entry-header,
+  .entry-content {
+    @include centered-content;
+  }
+
+  .entry-footer {
+    margin-top: 3em;
+    background-color: $color__background-dark;
+
+    > a {
+      font-size: 1.5em;
+      padding: 1em 0;
+      display: inline-block;
+
+      &:hover,
+      &:active {
+        &:after {
+          font-size: 0;
+        }
+      }
+    }
+  }
 }
 
 p + ul,

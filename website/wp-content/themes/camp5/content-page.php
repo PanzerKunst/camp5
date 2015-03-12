@@ -21,7 +21,8 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer centered-contents">
 		<?php edit_post_link( __( 'Edit', 'camp5' ), '<span class="edit-link">', '</span>' ); ?>
+        <a href="/"><i class="fa fa-home"></i></a>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -7,10 +7,14 @@
  * @package camp5
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?>
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="/wp-content/themes/camp5/images/rv-project.jpg" />
+
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -25,7 +29,9 @@
 
 	<header id="masthead" class="site-header" role="banner">
         <div class="site-branding">
-            <span class="site-title"><?php bloginfo( 'name' ); ?></span>
+            <div>
+                <a href="/" class="site-title"><?php bloginfo( 'name' ); ?></a>
+            </div>
             <h1 class="site-description"><?php bloginfo( 'description' ); ?></h1>
             <p>7 till 13 juni 2015</p>
         </div><!-- .site-branding -->

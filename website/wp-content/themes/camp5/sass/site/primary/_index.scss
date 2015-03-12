@@ -16,7 +16,7 @@
     }
 
     &:first-child {
-      > h2 {
+      > h1 {
         display: none;
       }
     }
@@ -25,13 +25,14 @@
       background-color: $color__background-screen;
     }
 
-    > h2,
+    > h1,
     > article {
       @include centered-content;
     }
 
-    > h2 {
+    > h1 {
       margin-top: 0;
+      text-align: left;
     }
   }
 }

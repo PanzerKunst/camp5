@@ -29,6 +29,8 @@ get_header(); ?>
 <?php get_footer(); ?>
 
 <script type="text/javascript">
+    CBR.Services.Browser.addUserAgentAttributeToHtmlTag();
+
     document.addEventListener("DOMContentLoaded", function () {
         CBR.Controllers.Index();
     });

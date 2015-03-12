@@ -70,21 +70,28 @@ var P = (function(prototype, ownProperty, undefined) {
   // as a minifier optimization, we've closured in a few helper functions
   // and the string 'prototype' (C[p] is much shorter than C.prototype)
 })('prototype', ({}).hasOwnProperty);
-;// create the base namespace
-var CBR = CBR || {};
+;var CBR = {};
 
-// create additional namespace
-CBR.Controllers = CBR.Controllers || {};
-CBR.Services = CBR.Services || {};
+// Additional namespaces
+CBR.Controllers = {};
+CBR.Services = {};
 
 CBR.defaultAnimationDuration = 0.5;
+;CBR.Services.Browser = {
+    addUserAgentAttributeToHtmlTag: function() {
+        document.documentElement.setAttribute("data-useragent", navigator.userAgent);
+    }
+};
 ;CBR.Controllers.Base = P(function () {
 });
 ;CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
+    c.menuBtnTopPosWhenHidden = "-40px";
+    c.navBarTopPosWhenHidden = "-72px";
+
     c.init = function () {
         this._initElements();
 
-        this.windowHeight = this.$window.height();
+        this._initElementDimentions();
 
         this._initEvents();
 
@@ -108,10 +115,10 @@ CBR.defaultAnimationDuration = 0.5;
 
     c._initEvents = function () {
         this.$window.resize(_.debounce(function () {
-            this.windowHeight = this.$window.height();
+            this._initElementDimentions();
         }.bind(this), 15));
 
-        this.$window.scroll(_.debounce($.proxy(this._updateMenuPosition, this), 15));
+        this.$window.scroll(_.debounce($.proxy(this._onScroll, this), 15));
 
         this.$menuBtn.click($.proxy(this._toggleMenu, this));
         this.$menuLinks.click($.proxy(this._scrollToPageAndToggleMenu, this));
@@ -119,56 +126,98 @@ CBR.defaultAnimationDuration = 0.5;
         this.$scrollingAnchors.click(this._scrollToPage);
     };
 
+    c._initElementDimentions = function () {
+        this.windowHeight = this.$window.height();
+
+        // Save height when expanded
+        var menuContainerHeight = this.$menuContainer.height();
+        this.menuContainerHeightExpanded = menuContainerHeight ? menuContainerHeight : this.menuContainerHeightExpanded;
+
+        var menuContainerWidth = this.$menuContainer.width();
+        this.menuContainerWidthExpanded = menuContainerWidth ? menuContainerWidth : this.menuContainerWidthExpanded;
+    };
+
     c._initMenu = function () {
         if (this.$menuBtn.is(":visible")) {
-            this.isMenuClosed = true;
-
-            // Save height when expanded
-            this.menuContainerHeightExpanded = this.$menuContainer.height();    // TODO: recalculate on window resize
-            this.menuContainerWidthExpanded = this.$menuContainer.width();    // TODO: recalculate on window resize
-
             TweenLite.set(this.$menuContainer, {height: 0, visibility: "visible"});
         }
     };
 
-    c._updateMenuPosition = function () {
+    c._onScroll = function () {
         var scrollPos = this.$window.scrollTop();
 
+        var wasScrolledDownEnough = this.scrollPos >= this.windowHeight;
         var isScrolledDownEnough = scrollPos >= this.windowHeight;
 
         this.$siteHeader.toggleClass("scrolled-down", isScrolledDownEnough);
 
-        // TODO: replace opacity with menu scrolling down
-        if (!this.isScrolledDownEnough && isScrolledDownEnough) {
-            TweenLite.set([this.$menuBtnWrapper, this.$menuContainer], {opacity: 0});
-            TweenLite.to([this.$menuBtnWrapper, this.$menuContainer], CBR.defaultAnimationDuration, {opacity: 1});
+        if (this._scrolledToTheBottom(scrollPos)) {
+            if (this.$menuBtn.is(":visible")) {
+                TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
+            } else {
+                TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: 0});
+            }
+        } else if (isScrolledDownEnough) {
+            if (this._isScrollUp(scrollPos)) {
+                if (this.$menuBtn.is(":visible")) {
+                    if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHidden) {
+                        TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
+                    }
+                } else if (this.$nav.css("top") === this.navBarTopPosWhenHidden) {
+                    TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: 0});
+                }
+            } else if (this._isScrollDown(scrollPos)) {
+                if (this.$menuBtn.is(":visible")) {
+                    if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === "0px") {
+                        TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: this.menuBtnTopPosWhenHidden});
+                    }
+                } else if (this.$nav.css("top") === "0px") {
+                    if (!wasScrolledDownEnough) {
+                        TweenLite.set(this.$nav, {top: this.navBarTopPosWhenHidden});  // Bugfix
+                    } else {
+                        TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: this.navBarTopPosWhenHidden});
+                    }
+                }
+            }
+        } else if (this._isScrollUp(scrollPos) && !this.$menuBtn.is(":visible")) {  // Specific buggy case
+            TweenLite.set(this.$nav, {top: 0});
         }
 
-        this.isScrolledDownEnough = isScrolledDownEnough;
+        this.scrollPos = scrollPos;
     };
 
     c._toggleMenu = function () {
         if (this.$menuBtn.is(":visible")) {
-            var targetHeight = this.isMenuClosed ? this.menuContainerHeightExpanded : 0;
+            this.$siteHeader.toggleClass("menu-open");
+
+            var isMenuOpen = this.$siteHeader.hasClass("menu-open");
+
+            var targetHeight = isMenuOpen ? this.menuContainerHeightExpanded : 0;
 
             TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {height: targetHeight, ease: Power4.easeOut});
 
             if (this.$siteHeader.hasClass("scrolled-down")) {
                 TweenLite.set(this.$nav, {width: "auto"});
 
-                if (this.isMenuClosed) {
+                if (isMenuOpen) {
                     TweenLite.set(this.$menuContainer, {width: 0});
                 }
 
-                var targetWidth = this.isMenuClosed ? this.menuContainerWidthExpanded : 0;
-                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {width: targetWidth, ease: Power4.easeOut, onComplete: function() {
+                var targetWidth = isMenuOpen ? this.menuContainerWidthExpanded : 0;
+                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {width: targetWidth, ease: Power4.easeOut, onComplete: function () {
                     TweenLite.set(this.$nav, {width: "100%"});
                 }.bind(this)});
             } else {
                 TweenLite.set(this.$menuContainer, {width: "auto"});
-            }
 
-            this.isMenuClosed = !this.isMenuClosed;
+                if (isMenuOpen) {
+                    var scrollPos = this.$window.scrollTop();
+                    if (scrollPos < this.menuContainerHeightExpanded) {
+                        // We scroll down to make sure that the menu becomes visible
+                        TweenLite.to(window, CBR.defaultAnimationDuration, {scrollTo: this.menuContainerHeightExpanded, ease: Power4.easeOut});
+                    }
+                }
+            }
         }
     };
 
@@ -187,5 +236,19 @@ CBR.defaultAnimationDuration = 0.5;
     c._scrollToPageAndToggleMenu = function (e) {
         this._scrollToPage(e);
         this._toggleMenu();
+    };
+
+    c._scrolledToTheBottom = function (scrollPos) {
+        return scrollPos + this.windowHeight === $(document).height();
+    };
+
+    c._isScrollUp = function (scrollPos) {
+        var scrollPosition = scrollPos || this.$window.scrollTop();
+        return scrollPosition < this.scrollPos;
+    };
+
+    c._isScrollDown = function (scrollPos) {
+        var scrollPosition = scrollPos || this.$window.scrollTop();
+        return scrollPosition > this.scrollPos;
     };
 });

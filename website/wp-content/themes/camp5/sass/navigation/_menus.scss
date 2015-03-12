@@ -1,49 +1,72 @@
-/* TODO: remove
-.site-header button,
-.main-navigation {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-} */
-
-#masthead.scrolled-down {
-  > #menu-btn-wrapper,
-  > #site-navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  > #menu-btn-wrapper {
-    margin-top: 0;
-
-    > button {
-      @include hdpi-sprite($color__background-dark);
-    }
-  }
-
-  > #site-navigation {
-    background-color: $color__background-dark;
-
-    width: 100%;
-  }
-}
-
 $menu-button-size: 40px;
 
 $nav-bar-height: $menu-button-size;
 $nav-bar-height-large-screen: 72px;
 
+@mixin large-menu-screen {
+  @media screen and (min-width: 1405px) {
+    @content;
+  }
+}
+
+#masthead {
+  &.scrolled-down {
+    > #menu-btn-wrapper,
+    > #site-navigation {
+      position: fixed;
+      left: 0;
+    }
+
+    > #menu-btn-wrapper {
+      margin-top: 0;
+      top: - $menu-button-size;
+
+      > button {
+        @include hdpi-sprite($color__background-dark);
+
+        padding: 0;
+
+        &:after {
+          content: "";
+        }
+      }
+    }
+
+    > #site-navigation {
+      background-color: $color__background-dark;
+
+      width: 100%;
+
+      top: 0;
+      @include large-menu-screen {
+        top: - $nav-bar-height-large-screen;
+      }
+    }
+  }
+
+  &.menu-open {
+    button {
+      $menu-button-image-location-x: 0;
+      $menu-button-image-location-y: 0;
+
+      background-position: $menu-button-image-location-x $menu-button-image-location-y;
+      @include hidpi {
+        background-position: half-pos($menu-button-image-location-x, $menu-button-image-location-y);
+      }
+    }
+  }
+}
+
 #menu-btn-wrapper {
   z-index: $z-index-menu-button;
 
   margin-top: -$nav-bar-height;
-  @include large-screen {
+  @include large-menu-screen {
     margin-top: -$nav-bar-height-large-screen;
   }
 
   > button {
-    $menu-button-image-location-x: 0;
+    $menu-button-image-location-x: -1920px;
     $menu-button-image-location-y: 0;
 
     @include hdpi-sprite(transparentize($color__background-dark, 0.2));
@@ -52,13 +75,21 @@ $nav-bar-height-large-screen: 72px;
       background-position: half-pos($menu-button-image-location-x, $menu-button-image-location-y);
     }
 
-    width: $menu-button-size;
-    height: $menu-button-size;
+    min-width: $menu-button-size;
+    min-height: $menu-button-size;
+
+    color: $color__border-input;
+    padding: 0 8px 0 $menu-button-size;
 
     display: block; // To avoid space in wrapper;
 
-    @include large-screen {
+    @include large-menu-screen {
       display: none;
+    }
+
+    &:after {
+      content: "Meny";
+      vertical-align: middle;
     }
   }
 }
@@ -70,7 +101,7 @@ $nav-bar-height-large-screen: 72px;
   position: relative; // For z-index to be taken into account
 
   background-color: $color__background-dark;
-  @include large-screen {
+  @include large-menu-screen {
     background-color: transparentize($color__background-dark, 0.2);
   }
 
@@ -79,11 +110,8 @@ $nav-bar-height-large-screen: 72px;
     visibility: hidden;
     overflow: hidden;
 
-    @include large-screen {
+    @include large-menu-screen {
       height: $nav-bar-height-large-screen;
-    }
-
-    @include large-screen {
       visibility: visible;
     }
 
@@ -103,22 +131,28 @@ $nav-bar-height-large-screen: 72px;
   }
 
   ul {
-    padding-top: 0.5em;
+    padding: 0.5em 0;
+  }
+
+  li {
+    line-height: 1;
+    padding: 0.5em;
+
+    // Override default
+    margin-top: 0;
   }
 
   @include medium-screen {
-    ul {
-      display: inline-block;
-    }
+    font-size: 16px;
 
-    li {
-      display: inline-block;
+    ul {
+      padding: 0;
+
+      @include columns(3);
     }
   }
 
-  @include large-screen {
-    font-size: 16px;
-
+  @include large-menu-screen {
     ul {
       display: table;
       width: 100%;
@@ -128,11 +162,12 @@ $nav-bar-height-large-screen: 72px;
       display: table-cell;
       vertical-align: middle;
 
-      padding: 0 0.5em;
+      // For fear that it would make it higher than $nav-bar-height-large-screen
+      padding-bottom: 0;
     }
 
     a {
-      max-width: 9em;
+      max-width: 11em;
       display: inline-block; // For "width" declaration to work
     }
   }

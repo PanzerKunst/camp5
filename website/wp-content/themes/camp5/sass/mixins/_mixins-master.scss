@@ -47,6 +47,7 @@
 @mixin hdpi-sprite($background-color: transparent) {
   @include retina-image($sprite-url, 1000px 250px);  // Sprite dimensions, halved
   background-color: $background-color;
+  background-repeat: no-repeat;
 }
 // silly function to divide the width and height to save me 2 seconds
 // whenever I need to calculate the halved retina background position

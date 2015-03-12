@@ -241,7 +241,7 @@ class Walker_Index_All_Pages_As_Single extends Walker_Nav_Menu {
         $page = get_post( $page_id );
 
         $item_output = $args->before;
-        $item_output .= '<h2>' . apply_filters( 'the_title', $page->post_title ) . '</h2>';
+        $item_output .= '<h1>' . apply_filters( 'the_title', $page->post_title ) . '</h1>';
         $item_output .= '<article>' . apply_filters('the_content', $page->post_content) . '</article>';
         $item_output .= $args->after;
 
