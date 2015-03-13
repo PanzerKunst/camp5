@@ -149,6 +149,7 @@ $nav-bar-height-large-screen: 72px;
       padding: 0;
 
       @include columns(3);
+      @include column-rule(2px dotted);
     }
   }
 

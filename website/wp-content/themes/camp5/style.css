@@ -2306,26 +2306,37 @@ a {
       font-size: 0.6em;
       margin-left: 0.1em;
       font-family: "FontAwesome";
+      font-style: normal;
+      font-variant: normal;
       font-weight: normal;
+      font-stretch: normal;
       line-height: 1;
-      content: "";
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
+      -moz-osx-font-smoothing: grayscale;
+      content: ""; }
   a[target="_blank"]:hover:after, a[target="_blank"]:active:after {
     font-family: "FontAwesome";
+    font-style: normal;
+    font-variant: normal;
     font-weight: normal;
+    font-stretch: normal;
     line-height: 1;
-    content: "\f14c"; }
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: ""; }
   a[href^="#"]:after {
     vertical-align: super;
     font-size: 0.6em;
     margin-left: 0.1em;
     font-family: "FontAwesome";
+    font-style: normal;
+    font-variant: normal;
     font-weight: normal;
+    font-stretch: normal;
     line-height: 1;
-    content: "";
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    -moz-osx-font-smoothing: grayscale;
+    content: ""; }
 
 /*--------------------------------------------------------------
 5.2 Menus
@@ -2426,7 +2437,10 @@ a {
         padding: 0;
         -webkit-columns: 3;
         -moz-columns: 3;
-        columns: 3; } }
+        columns: 3;
+        -webkit-column-rule: 2px dotted;
+        -moz-column-rule: 2px dotted;
+        column-rule: 2px dotted; } }
   @media screen and (min-width: 1405px) {
     #site-navigation ul {
       display: table;

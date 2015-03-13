@@ -74,11 +74,15 @@
 
 @mixin icon-font($content) {
   font-family: "FontAwesome";
+  font-style: normal;
+  font-variant: normal;
   font-weight: normal;
-  line-height: 1;
+  font-stretch: normal;
 
-  content: $content;
+  line-height: 1;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  content: $content
 }

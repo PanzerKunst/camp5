@@ -151,36 +151,22 @@ CBR.defaultAnimationDuration = 0.5;
 
         this.$siteHeader.toggleClass("scrolled-down", isScrolledDownEnough);
 
-        if (this._scrolledToTheBottom(scrollPos)) {
+        if (isScrolledDownEnough) {
             if (this.$menuBtn.is(":visible")) {
-                TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
+                if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$menuBtnWrapper.css("top") === "0px") {
+                    TweenLite.set(this.$menuBtnWrapper, {top: this.menuBtnTopPosWhenHidden});
+                }
+                else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHidden) {
+                    TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
+                }
             } else {
-                TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: 0});
-            }
-        } else if (isScrolledDownEnough) {
-            if (this._isScrollUp(scrollPos)) {
-                if (this.$menuBtn.is(":visible")) {
-                    if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHidden) {
-                        TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
-                    }
-                } else if (this.$nav.css("top") === this.navBarTopPosWhenHidden) {
+                if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$nav.css("top") === "0px") {
+                    TweenLite.set(this.$nav, {top: this.navBarTopPosWhenHidden});
+                }
+                else if (this.$nav.css("top") === this.navBarTopPosWhenHidden) {
                     TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: 0});
                 }
-            } else if (this._isScrollDown(scrollPos)) {
-                if (this.$menuBtn.is(":visible")) {
-                    if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === "0px") {
-                        TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: this.menuBtnTopPosWhenHidden});
-                    }
-                } else if (this.$nav.css("top") === "0px") {
-                    if (!wasScrolledDownEnough) {
-                        TweenLite.set(this.$nav, {top: this.navBarTopPosWhenHidden});  // Bugfix
-                    } else {
-                        TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: this.navBarTopPosWhenHidden});
-                    }
-                }
             }
-        } else if (this._isScrollUp(scrollPos) && !this.$menuBtn.is(":visible")) {  // Specific buggy case
-            TweenLite.set(this.$nav, {top: 0});
         }
 
         this.scrollPos = scrollPos;
