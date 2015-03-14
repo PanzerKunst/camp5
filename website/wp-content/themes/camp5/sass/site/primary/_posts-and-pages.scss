@@ -24,6 +24,11 @@
 }
 
 .page {
+  > #page {
+    display: flex;
+    flex-direction: column;
+  }
+
   #masthead {
     height: auto;
 
@@ -47,8 +52,16 @@
     }
   }
 
-  #colophon {
-    display: none;
+  #content,
+  #primary,
+  #main,
+  #main > .hentry {
+    display: flex;
+    flex: 0 1 100%;
+  }
+
+  #main > .hentry {
+    flex-direction: column;
   }
 
   .entry-header,
@@ -56,8 +69,13 @@
     @include centered-content;
   }
 
+  .entry-content {
+    flex: 0 1 100%;
+
+    margin-bottom: 3em;
+  }
+
   .entry-footer {
-    margin-top: 3em;
     background-color: $color__background-dark;
 
     > a {
@@ -72,6 +90,10 @@
         }
       }
     }
+  }
+
+  #colophon {
+    display: none;
   }
 }
 

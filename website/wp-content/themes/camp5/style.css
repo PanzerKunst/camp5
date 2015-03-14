@@ -2584,6 +2584,9 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
+.page > #page {
+  display: flex;
+  flex-direction: column; }
 .page #masthead {
   height: auto; }
   .page #masthead > #menu-btn-wrapper,
@@ -2597,8 +2600,14 @@ a {
   .page .site-branding > h1,
   .page .site-branding > p {
     display: none; }
-.page #colophon {
-  display: none; }
+.page #content,
+.page #primary,
+.page #main,
+.page #main > .hentry {
+  display: flex;
+  flex: 0 1 100%; }
+.page #main > .hentry {
+  flex-direction: column; }
 .page .entry-header,
 .page .entry-content {
   margin-left: auto;
@@ -2613,8 +2622,10 @@ a {
     .page .entry-header,
     .page .entry-content {
       max-width: 960px; } }
+.page .entry-content {
+  flex: 0 1 100%;
+  margin-bottom: 3em; }
 .page .entry-footer {
-  margin-top: 3em;
   background-color: #202121; }
   .page .entry-footer > a {
     font-size: 1.5em;
@@ -2622,6 +2633,8 @@ a {
     display: inline-block; }
     .page .entry-footer > a:hover:after, .page .entry-footer > a:active:after {
       font-size: 0; }
+.page #colophon {
+  display: none; }
 
 p + ul,
 p + ol,
