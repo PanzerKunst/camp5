@@ -85,8 +85,10 @@ CBR.defaultAnimationDuration = 0.5;
 ;CBR.Controllers.Base = P(function () {
 });
 ;CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
-    c.menuBtnTopPosWhenHidden = "-40px";
-    c.navBarTopPosWhenHidden = "-72px";
+    c.menuBtnTopPosWhenHidden = -40;
+    c.navBarTopPosWhenHidden = -72;
+    c.menuBtnTopPosWhenHiddenPx = c.menuBtnTopPosWhenHidden + "px";
+    c.navBarTopPosWhenHiddenPx = c.navBarTopPosWhenHidden + "px";
 
     c.init = function () {
         this._initElements();
@@ -147,23 +149,28 @@ CBR.defaultAnimationDuration = 0.5;
         var scrollPos = this.$window.scrollTop();
 
         var wasScrolledDownEnough = this.scrollPos >= this.windowHeight;
-        var isScrolledDownEnough = scrollPos >= this.windowHeight;
+
+        var isScrolledDownEnough = scrollPos >= this.windowHeight + this.navBarTopPosWhenHidden;
+
+        if (this.$menuBtn.is(":visible")) {
+            isScrolledDownEnough = scrollPos >= this.windowHeight + this.menuBtnTopPosWhenHidden;
+        }
 
         this.$siteHeader.toggleClass("scrolled-down", isScrolledDownEnough);
 
         if (isScrolledDownEnough) {
             if (this.$menuBtn.is(":visible")) {
                 if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$menuBtnWrapper.css("top") === "0px") {
-                    TweenLite.set(this.$menuBtnWrapper, {top: this.menuBtnTopPosWhenHidden});
+                    TweenLite.set(this.$menuBtnWrapper, {top: this.menuBtnTopPosWhenHiddenPx});
                 }
-                else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHidden) {
+                else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHiddenPx) {
                     TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
                 }
             } else {
                 if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$nav.css("top") === "0px") {
-                    TweenLite.set(this.$nav, {top: this.navBarTopPosWhenHidden});
+                    TweenLite.set(this.$nav, {top: this.navBarTopPosWhenHiddenPx});
                 }
-                else if (this.$nav.css("top") === this.navBarTopPosWhenHidden) {
+                else if (this.$nav.css("top") === this.navBarTopPosWhenHiddenPx) {
                     TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: 0});
                 }
             }
