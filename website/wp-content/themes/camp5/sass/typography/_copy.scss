@@ -44,3 +44,7 @@ mark, ins {
 big {
   font-size: 125%;
 }
+
+.emphasis {
+  background-color: lighten($color__action, 10%);
+}

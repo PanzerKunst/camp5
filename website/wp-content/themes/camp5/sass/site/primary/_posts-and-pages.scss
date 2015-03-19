@@ -24,13 +24,16 @@
 }
 
 .page {
-  > #page {
-    display: flex;
-    flex-direction: column;
-  }
+  $non-index-page-header-height: 3em;
+  $non-index-page-footer-height: 5.5em;
 
   #masthead {
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $z-index-menu;
+    height: $non-index-page-header-height;
 
     > #menu-btn-wrapper,
     > #site-navigation {
@@ -54,14 +57,14 @@
 
   #content,
   #primary,
-  #main,
-  #main > .hentry {
-    display: flex;
-    flex: 0 1 100%;
+  #main {
+    height: 100%; // For bottom-footer;
   }
 
-  #main > .hentry {
-    flex-direction: column;
+  // For bottom-footer;
+  .hentry {
+    min-height: 100%;
+    position: relative;
   }
 
   .entry-header,
@@ -69,18 +72,30 @@
     @include centered-content;
   }
 
-  .entry-content {
-    flex: 0 1 100%;
+  .entry-header {
+    padding-top: $non-index-page-header-height + 1em;
 
-    margin-bottom: 3em;
+    > h1 {
+      margin-top: 0;
+    }
+  }
+
+  .entry-content {
+    padding-bottom: $non-index-page-footer-height + 2em;
   }
 
   .entry-footer {
     background-color: $color__background-dark;
 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $non-index-page-footer-height;
+
     > a {
       font-size: 1.5em;
-      padding: 1em 0;
+      padding-top: 1em;
       display: inline-block;
 
       &:hover,

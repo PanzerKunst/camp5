@@ -33,7 +33,7 @@
                 <a href="/" class="site-title"><?php bloginfo( 'name' ); ?></a>
             </div>
             <h1 class="site-description"><?php bloginfo( 'description' ); ?></h1>
-            <p>7 till 13 juni 2015</p>
+            <p>07-13 juni 2015</p>
         </div><!-- .site-branding -->
         <div id="menu-btn-wrapper">
             <button class="styleless"></button>

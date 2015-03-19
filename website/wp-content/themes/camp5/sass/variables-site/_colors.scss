@@ -12,8 +12,8 @@ $color__text-input-focus: #111;
 $color__text-btn: #fff;
 $color__action: #4cb7ac;
 $color__link: $color__action;
-$color__link-visited: $color__action;
-$color__link-hover: $color__action;
+$color__link-visited: $color__link;
+$color__link-hover: lighten($color__link, 10%);
 $color__text-main: #444;
 $color__heading: #333;
 

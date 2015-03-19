@@ -46,5 +46,9 @@ body,
   > p {
     text-align: center;
     font-size: 1.5em;
+
+    @include medium-screen {
+      font-size: 2.25em;
+    }
   }
 }

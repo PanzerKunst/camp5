@@ -2106,6 +2106,9 @@ mark, ins {
 big {
   font-size: 125%; }
 
+.emphasis {
+  background-color: #70c6bd; }
+
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
@@ -2584,11 +2587,13 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
-.page > #page {
-  display: flex;
-  flex-direction: column; }
 .page #masthead {
-  height: auto; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 3em; }
   .page #masthead > #menu-btn-wrapper,
   .page #masthead > #site-navigation {
     display: none; }
@@ -2602,12 +2607,11 @@ a {
     display: none; }
 .page #content,
 .page #primary,
-.page #main,
-.page #main > .hentry {
-  display: flex;
-  flex: 0 1 100%; }
-.page #main > .hentry {
-  flex-direction: column; }
+.page #main {
+  height: 100%; }
+.page .hentry {
+  min-height: 100%;
+  position: relative; }
 .page .entry-header,
 .page .entry-content {
   margin-left: auto;
@@ -2622,14 +2626,22 @@ a {
     .page .entry-header,
     .page .entry-content {
       max-width: 960px; } }
+.page .entry-header {
+  padding-top: 4em; }
+  .page .entry-header > h1 {
+    margin-top: 0; }
 .page .entry-content {
-  flex: 0 1 100%;
-  margin-bottom: 3em; }
+  padding-bottom: 7.5em; }
 .page .entry-footer {
-  background-color: #202121; }
+  background-color: #202121;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5.5em; }
   .page .entry-footer > a {
     font-size: 1.5em;
-    padding: 1em 0;
+    padding-top: 1em;
     display: inline-block; }
     .page .entry-footer > a:hover:after, .page .entry-footer > a:active:after {
       font-size: 0; }
@@ -2709,6 +2721,9 @@ body,
   .site-branding > p {
     text-align: center;
     font-size: 1.5em; }
+    @media screen and (min-width: 640px) {
+      .site-branding > p {
+        font-size: 2.25em; } }
 
 /*--------------------------------------------------------------
 10.5 Footer
