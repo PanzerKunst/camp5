@@ -86,3 +86,9 @@
 
   content: $content
 }
+
+@mixin large-menu-screen {
+  @media screen and (min-width: 1405px) {
+    @content;
+  }
+}

@@ -42,7 +42,7 @@
   }
 
   .site-branding {
-    background-image: none;
+    background-image: none !important;
 
     a {
       color: $color__text-main;

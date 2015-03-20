@@ -1,13 +1,6 @@
 $menu-button-size: 40px;
 
 $nav-bar-height: $menu-button-size;
-$nav-bar-height-large-screen: 72px;
-
-@mixin large-menu-screen {
-  @media screen and (min-width: 1405px) {
-    @content;
-  }
-}
 
 #masthead {
   &.scrolled-down {

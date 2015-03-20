@@ -28,12 +28,15 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'camp5' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-        <div class="site-branding">
+        <div class="site-branding" style="background-image: url(<?php header_image(); ?>)">
             <div>
                 <a href="/" class="site-title"><?php bloginfo( 'name' ); ?></a>
             </div>
+
+            <span>Photo thanks to <a href="http://rvproj.com" target="_blank">The RV Project</a></span>
+
             <h1 class="site-description"><?php bloginfo( 'description' ); ?></h1>
-            <p>07-13 juni 2015</p>
+            <p>07-13 &nbsp;juni&nbsp; 2015</p>
         </div><!-- .site-branding -->
         <div id="menu-btn-wrapper">
             <button class="styleless"></button>

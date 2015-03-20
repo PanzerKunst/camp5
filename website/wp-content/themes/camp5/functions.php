@@ -75,7 +75,8 @@ function camp5_setup() {
 		'default-image' => '',
 	) ) );
 
-        add_theme_support('menus');
+    add_theme_support('menus');
+    add_theme_support('custom-header');
 }
 endif; // camp5_setup
 add_action( 'after_setup_theme', 'camp5_setup' );

@@ -8,17 +8,18 @@ body,
 .site-branding {
   height: 100%;
 
-  background: url("/wp-content/themes/camp5/images/rv-project.jpg") center center no-repeat;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 
   > div,
-  > h1,
-  > p {
+  > h1 {
     @include centered-content;
   }
 
   > div > a,
+  > span,
   > h1,
   > p {
     color: white;
@@ -43,9 +44,35 @@ body,
     }
   }
 
+  > span {
+    position: absolute;
+    right: 1em;
+    bottom: 0.3em;
+
+    color: $color__border-input;
+    font-size: 0.7em;
+
+    @include large-menu-screen {
+      bottom: $nav-bar-height-large-screen + $spacer-unit-size/2;
+    }
+
+    > a {
+      color: $color__border-input;
+      text-decoration: underline;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: lighten($color__border-input, 10%);
+        text-decoration: none;
+      }
+    }
+  }
+
   > p {
     text-align: center;
     font-size: 1.5em;
+    letter-spacing: -0.07em;
 
     @include medium-screen {
       font-size: 2.25em;
