@@ -1,0 +1,51 @@
+$thumb-size: 200px;
+
+.cbr-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding-left: 0;
+  list-style-type: none;
+
+  > li {
+    flex-basis: $thumb-size;
+    height: $thumb-size;
+
+    background-size: $thumb-size $thumb-size;
+
+    margin: 0;
+
+    > a {
+      display: block;
+      height: 100%;
+
+      &:hover,
+      &:active {
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+// Because of buggy flexbox support
+html[data-useragent*="iPhone"],
+html[data-useragent*="iPad"],
+html[data-useragent*="iPod"] {
+  .cbr-gallery {
+    display: inline-block;
+
+    > li {
+      display: inline-block;
+
+      margin: -6px -3px;
+
+      width: $thumb-size;
+      height: $thumb-size;
+
+      background-size: $thumb-size $thumb-size;
+    }
+  }
+}

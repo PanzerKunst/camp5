@@ -1,23 +1,25 @@
-CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
+"use strict";
+
+CBR.Controllers.Index = P(CBR.Controllers.Base, function(c) {
     c.menuBtnTopPosWhenHidden = -40;
     c.navBarTopPosWhenHidden = -72;
     c.menuBtnTopPosWhenHiddenPx = c.menuBtnTopPosWhenHidden + "px";
     c.navBarTopPosWhenHiddenPx = c.navBarTopPosWhenHidden + "px";
 
-    c.init = function () {
+    c.init = function() {
         this._initElements();
-
         this._initElementDimentions();
-
         this._initEvents();
-
         this._initMenu();
+
+        CBR.Services.Gallery("/wp-content/themes/camp5/images/gallery/thumbs/", "/wp-content/themes/camp5/images/gallery/full/");
     };
 
-    c._initElements = function () {
+    c._initElements = function() {
         this.$window = $(window);
 
         this.$siteHeader = $("#masthead");
+        this.$headerWithoutMenu = this.$siteHeader.children(".site-branding");
         this.$menuBtnWrapper = this.$siteHeader.children("#menu-btn-wrapper");
         this.$menuBtn = this.$menuBtnWrapper.children();
 
@@ -29,12 +31,14 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
         this.$scrollingAnchors = this.$mainPanel.find("a[href^=#]");
     };
 
-    c._initEvents = function () {
-        this.$window.resize(_.debounce(function () {
+    c._initEvents = function() {
+        this.$window.resize(_.debounce(function() {
             this._initElementDimentions();
         }.bind(this), 15));
 
         this.$window.scroll(_.debounce($.proxy(this._onScroll, this), 15));
+
+        this.$headerWithoutMenu.parallax();
 
         this.$menuBtn.click($.proxy(this._toggleMenu, this));
         this.$menuLinks.click($.proxy(this._scrollToPageAndToggleMenu, this));
@@ -42,7 +46,7 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
         this.$scrollingAnchors.click(this._scrollToPage);
     };
 
-    c._initElementDimentions = function () {
+    c._initElementDimentions = function() {
         this.windowHeight = this.$window.height();
 
         // Save height when expanded
@@ -53,13 +57,13 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
         this.menuContainerWidthExpanded = menuContainerWidth ? menuContainerWidth : this.menuContainerWidthExpanded;
     };
 
-    c._initMenu = function () {
+    c._initMenu = function() {
         if (this.$menuBtn.is(":visible")) {
             TweenLite.set(this.$menuContainer, {height: 0, visibility: "visible"});
         }
     };
 
-    c._onScroll = function () {
+    c._onScroll = function() {
         var scrollPos = this.$window.scrollTop();
 
         var wasScrolledDownEnough = this.scrollPos >= this.windowHeight;
@@ -76,15 +80,13 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
             if (this.$menuBtn.is(":visible")) {
                 if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$menuBtnWrapper.css("top") === "0px") {
                     TweenLite.set(this.$menuBtnWrapper, {top: this.menuBtnTopPosWhenHiddenPx});
-                }
-                else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHiddenPx) {
+                } else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHiddenPx) {
                     TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
                 }
             } else {
                 if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$nav.css("top") === "0px") {
                     TweenLite.set(this.$nav, {top: this.navBarTopPosWhenHiddenPx});
-                }
-                else if (this.$nav.css("top") === this.navBarTopPosWhenHiddenPx) {
+                } else if (this.$nav.css("top") === this.navBarTopPosWhenHiddenPx) {
                     TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: 0});
                 }
             }
@@ -93,7 +95,7 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
         this.scrollPos = scrollPos;
     };
 
-    c._toggleMenu = function () {
+    c._toggleMenu = function() {
         if (this.$menuBtn.is(":visible")) {
             this.$siteHeader.toggleClass("menu-open");
 
@@ -111,7 +113,7 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
                 }
 
                 var targetWidth = isMenuOpen ? this.menuContainerWidthExpanded : 0;
-                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {width: targetWidth, ease: Power4.easeOut, onComplete: function () {
+                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {width: targetWidth, ease: Power4.easeOut, onComplete: function() {
                     TweenLite.set(this.$nav, {width: "100%"});
                 }.bind(this)});
             } else {
@@ -128,7 +130,7 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
         }
     };
 
-    c._scrollToPage = function (e) {
+    c._scrollToPage = function(e) {
         e.preventDefault();
 
         var $target = $(e.currentTarget);
@@ -140,21 +142,21 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
         TweenLite.to(window, CBR.defaultAnimationDuration, {scrollTo: scrollYPos, ease: Power4.easeOut});
     };
 
-    c._scrollToPageAndToggleMenu = function (e) {
+    c._scrollToPageAndToggleMenu = function(e) {
         this._scrollToPage(e);
         this._toggleMenu();
     };
 
-    c._scrolledToTheBottom = function (scrollPos) {
+    c._scrolledToTheBottom = function(scrollPos) {
         return scrollPos + this.windowHeight === $(document).height();
     };
 
-    c._isScrollUp = function (scrollPos) {
+    c._isScrollUp = function(scrollPos) {
         var scrollPosition = scrollPos || this.$window.scrollTop();
         return scrollPosition < this.scrollPos;
     };
 
-    c._isScrollDown = function (scrollPos) {
+    c._isScrollDown = function(scrollPos) {
         var scrollPosition = scrollPos || this.$window.scrollTop();
         return scrollPosition > this.scrollPos;
     };

@@ -70,40 +70,138 @@ var P = (function(prototype, ownProperty, undefined) {
   // as a minifier optimization, we've closured in a few helper functions
   // and the string 'prototype' (C[p] is much shorter than C.prototype)
 })('prototype', ({}).hasOwnProperty);
-;var CBR = {};
+;"use strict";
+
+var CBR = {};
 
 // Additional namespaces
 CBR.Controllers = {};
 CBR.Services = {};
 
 CBR.defaultAnimationDuration = 0.5;
-;CBR.Services.Browser = {
+;"use strict";
+
+CBR.Services.Browser = {
     addUserAgentAttributeToHtmlTag: function() {
         document.documentElement.setAttribute("data-useragent", navigator.userAgent);
     }
 };
-;CBR.Controllers.Base = P(function () {
+;"use strict";
+
+$.fn.parallax = function(bgPosX, parallaxSpeed) {
+    bgPosX = bgPosX || "50%";
+    parallaxSpeed = parallaxSpeed || 3;
+
+    var $window = $(window);
+    var $elements = $(this);
+
+    function update() {
+        var scrollPos = $window.scrollTop();
+
+        $elements.each(function() {
+            var $el = $(this);
+            var elementPosY = $el.offset().top;
+
+            if (scrollPos >= elementPosY) {
+                var newParallaxPosition = -Math.round((scrollPos - elementPosY) / parallaxSpeed) + "px";
+                $el.css("backgroundPosition", bgPosX + " " + newParallaxPosition);
+            }
+        });
+    }
+
+    if (!Modernizr.touch) {
+        $window.scroll(update).resize(update);
+    }
+};
+;"use strict";
+
+/* Content of the Gallery page in Wordpress:
+ <ul class="cbr-gallery">
+ <li data-file-name="acroyoga.jpg"></li>
+ <li data-file-name="after-dinner.jpg"></li>
+ <li data-file-name="after-the-rain.jpg"></li>
+ <li data-file-name="anders-climbing.jpg"></li>
+ <li data-file-name="campfire-at-night-1.jpg"></li>
+ <li data-file-name="campfire-at-night-2.jpg"></li>
+ <li data-file-name="campfire-at-night-closeup-1.jpg"></li>
+ <li data-file-name="campfire-at-night-closeup-2.jpg"></li>
+ <li data-file-name="community-tent-at-night.jpg"></li>
+ <li data-file-name="dinner.jpg"></li>
+ <li data-file-name="dishwashing.jpg"></li>
+ <li data-file-name="emma-climbing.jpg"></li>
+ <li data-file-name="epicness.jpg"></li>
+ <li data-file-name="friends.jpg"></li>
+ <li data-file-name="hair-wash.jpg"></li>
+ <li data-file-name="harmonica.jpg"></li>
+ <li data-file-name="kids.jpg"></li>
+ <li data-file-name="kylskap-problemet.jpg"></li>
+ <li data-file-name="malin-climbing.jpg"></li>
+ <li data-file-name="meadow.jpg"></li>
+ <li data-file-name="saturday-night-1.jpg"></li>
+ <li data-file-name="saturday-night-2.jpg"></li>
+ <li data-file-name="slackline.jpg"></li>
+ <li data-file-name="spotting.jpg"></li>
+ </ul>
+ */
+
+CBR.Services.Gallery = P(function(c) {
+    c.init = function(thumbDirectory, fullSizeDirectory) {
+        this.thumbDirectory = thumbDirectory;
+        this.fullSizeDirectory = fullSizeDirectory;
+
+        this._initElements();
+        this._initBackgrounds();
+        this._initAnchors();
+    };
+
+    c._initElements = function() {
+        this.$listItems = $(".cbr-gallery").children();
+    };
+
+    c._initBackgrounds = function() {
+        for (var i = 0; i < this.$listItems.length; i++) {
+            var $li = $(this.$listItems[i]);
+            var fileName = $li.data("fileName");
+
+            $li.css("background-image", "url(" + this.thumbDirectory + fileName + ")");
+        }
+    };
+
+    c._initAnchors = function() {
+        for (var i = 0; i < this.$listItems.length; i++) {
+            var $li = $(this.$listItems[i]);
+            var fileName = $li.data("fileName");
+
+            $li.html("<a href=\"" + this.fullSizeDirectory + fileName + "\"></a>");
+        }
+    };
 });
-;CBR.Controllers.Index = P(CBR.Controllers.Base, function (c) {
+;"use strict";
+
+CBR.Controllers.Base = P(function() {
+});
+;"use strict";
+
+CBR.Controllers.Index = P(CBR.Controllers.Base, function(c) {
     c.menuBtnTopPosWhenHidden = -40;
     c.navBarTopPosWhenHidden = -72;
     c.menuBtnTopPosWhenHiddenPx = c.menuBtnTopPosWhenHidden + "px";
     c.navBarTopPosWhenHiddenPx = c.navBarTopPosWhenHidden + "px";
 
-    c.init = function () {
+    c.init = function() {
         this._initElements();
-
         this._initElementDimentions();
-
         this._initEvents();
-
         this._initMenu();
+
+        CBR.Services.Gallery("/wp-content/themes/camp5/images/gallery/thumbs/", "/wp-content/themes/camp5/images/gallery/full/");
     };
 
-    c._initElements = function () {
+    c._initElements = function() {
         this.$window = $(window);
 
         this.$siteHeader = $("#masthead");
+        this.$headerWithoutMenu = this.$siteHeader.children(".site-branding");
         this.$menuBtnWrapper = this.$siteHeader.children("#menu-btn-wrapper");
         this.$menuBtn = this.$menuBtnWrapper.children();
 
@@ -115,12 +213,14 @@ CBR.defaultAnimationDuration = 0.5;
         this.$scrollingAnchors = this.$mainPanel.find("a[href^=#]");
     };
 
-    c._initEvents = function () {
-        this.$window.resize(_.debounce(function () {
+    c._initEvents = function() {
+        this.$window.resize(_.debounce(function() {
             this._initElementDimentions();
         }.bind(this), 15));
 
         this.$window.scroll(_.debounce($.proxy(this._onScroll, this), 15));
+
+        this.$headerWithoutMenu.parallax();
 
         this.$menuBtn.click($.proxy(this._toggleMenu, this));
         this.$menuLinks.click($.proxy(this._scrollToPageAndToggleMenu, this));
@@ -128,7 +228,7 @@ CBR.defaultAnimationDuration = 0.5;
         this.$scrollingAnchors.click(this._scrollToPage);
     };
 
-    c._initElementDimentions = function () {
+    c._initElementDimentions = function() {
         this.windowHeight = this.$window.height();
 
         // Save height when expanded
@@ -139,13 +239,13 @@ CBR.defaultAnimationDuration = 0.5;
         this.menuContainerWidthExpanded = menuContainerWidth ? menuContainerWidth : this.menuContainerWidthExpanded;
     };
 
-    c._initMenu = function () {
+    c._initMenu = function() {
         if (this.$menuBtn.is(":visible")) {
             TweenLite.set(this.$menuContainer, {height: 0, visibility: "visible"});
         }
     };
 
-    c._onScroll = function () {
+    c._onScroll = function() {
         var scrollPos = this.$window.scrollTop();
 
         var wasScrolledDownEnough = this.scrollPos >= this.windowHeight;
@@ -162,15 +262,13 @@ CBR.defaultAnimationDuration = 0.5;
             if (this.$menuBtn.is(":visible")) {
                 if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$menuBtnWrapper.css("top") === "0px") {
                     TweenLite.set(this.$menuBtnWrapper, {top: this.menuBtnTopPosWhenHiddenPx});
-                }
-                else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHiddenPx) {
+                } else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHiddenPx) {
                     TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
                 }
             } else {
                 if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$nav.css("top") === "0px") {
                     TweenLite.set(this.$nav, {top: this.navBarTopPosWhenHiddenPx});
-                }
-                else if (this.$nav.css("top") === this.navBarTopPosWhenHiddenPx) {
+                } else if (this.$nav.css("top") === this.navBarTopPosWhenHiddenPx) {
                     TweenLite.to(this.$nav, CBR.defaultAnimationDuration, {top: 0});
                 }
             }
@@ -179,7 +277,7 @@ CBR.defaultAnimationDuration = 0.5;
         this.scrollPos = scrollPos;
     };
 
-    c._toggleMenu = function () {
+    c._toggleMenu = function() {
         if (this.$menuBtn.is(":visible")) {
             this.$siteHeader.toggleClass("menu-open");
 
@@ -197,7 +295,7 @@ CBR.defaultAnimationDuration = 0.5;
                 }
 
                 var targetWidth = isMenuOpen ? this.menuContainerWidthExpanded : 0;
-                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {width: targetWidth, ease: Power4.easeOut, onComplete: function () {
+                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {width: targetWidth, ease: Power4.easeOut, onComplete: function() {
                     TweenLite.set(this.$nav, {width: "100%"});
                 }.bind(this)});
             } else {
@@ -214,7 +312,7 @@ CBR.defaultAnimationDuration = 0.5;
         }
     };
 
-    c._scrollToPage = function (e) {
+    c._scrollToPage = function(e) {
         e.preventDefault();
 
         var $target = $(e.currentTarget);
@@ -226,21 +324,21 @@ CBR.defaultAnimationDuration = 0.5;
         TweenLite.to(window, CBR.defaultAnimationDuration, {scrollTo: scrollYPos, ease: Power4.easeOut});
     };
 
-    c._scrollToPageAndToggleMenu = function (e) {
+    c._scrollToPageAndToggleMenu = function(e) {
         this._scrollToPage(e);
         this._toggleMenu();
     };
 
-    c._scrolledToTheBottom = function (scrollPos) {
+    c._scrolledToTheBottom = function(scrollPos) {
         return scrollPos + this.windowHeight === $(document).height();
     };
 
-    c._isScrollUp = function (scrollPos) {
+    c._isScrollUp = function(scrollPos) {
         var scrollPosition = scrollPos || this.$window.scrollTop();
         return scrollPosition < this.scrollPos;
     };
 
-    c._isScrollDown = function (scrollPos) {
+    c._isScrollDown = function(scrollPos) {
         var scrollPosition = scrollPos || this.$window.scrollTop();
         return scrollPosition > this.scrollPos;
     };

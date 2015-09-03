@@ -12,8 +12,8 @@
     xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:image" content="/wp-content/themes/camp5/images/rv-project.jpg" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta property="og:image" content="/wp-content/themes/camp5/images/hero-image.jpg" />
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -33,10 +33,8 @@
                 <a href="/" class="site-title"><?php bloginfo( 'name' ); ?></a>
             </div>
 
-            <span>Photo thanks to <a href="http://rvproj.com" target="_blank">The RV Project</a></span>
-
             <h1 class="site-description"><?php bloginfo( 'description' ); ?></h1>
-            <p>07-13 &nbsp;juni&nbsp; 2015</p>
+            <p>05-12 &nbsp;juni&nbsp; 2016</p>
         </div><!-- .site-branding -->
         <div id="menu-btn-wrapper">
             <button class="styleless"></button>

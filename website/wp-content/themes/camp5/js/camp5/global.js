@@ -1,3 +1,5 @@
+"use strict";
+
 var CBR = {};
 
 // Additional namespaces

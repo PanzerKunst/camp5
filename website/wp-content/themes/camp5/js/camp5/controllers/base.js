@@ -1,2 +1,4 @@
-CBR.Controllers.Base = P(function () {
+"use strict";
+
+CBR.Controllers.Base = P(function() {
 });

@@ -8,7 +8,7 @@ body,
 .site-branding {
   height: 100%;
 
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -19,11 +19,10 @@ body,
   }
 
   > div > a,
-  > span,
   > h1,
   > p {
     color: white;
-    text-shadow: 0 0 0.5em $color__background-dark;
+    text-shadow: 0 0 0.2em $color__background-dark;
   }
 
   > h1,
@@ -40,31 +39,6 @@ body,
     &:active {
       &:after {
         font-size: 0;
-      }
-    }
-  }
-
-  > span {
-    position: absolute;
-    right: 1em;
-    bottom: 0.3em;
-
-    color: $color__border-input;
-    font-size: 0.7em;
-
-    @include large-menu-screen {
-      bottom: $nav-bar-height-large-screen + $spacer-unit-size/2;
-    }
-
-    > a {
-      color: $color__border-input;
-      text-decoration: underline;
-
-      &:hover,
-      &:active,
-      &:focus {
-        color: lighten($color__border-input, 10%);
-        text-decoration: none;
       }
     }
   }

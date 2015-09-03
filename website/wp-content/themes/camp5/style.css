@@ -2037,6 +2037,20 @@ textarea {
   font-size: 1rem;
   line-height: 1.75; }
 
+/* @font-face {
+  font-family: 'Gotham Rounded';
+  src: url("fonts/gotham-rounded/gotham-rounded-medium.otf");
+}
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url("fonts/gotham-rounded/gotham-rounded-bold.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url("fonts/gotham-rounded/gotham-rounded-light.otf");
+  font-weight: 100;
+} */
 h1,
 h2,
 h3,
@@ -2127,7 +2141,8 @@ body {
   /* Fallback for when there is no custom background color defined. */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
   letter-spacing: -0.02em;
   font-size: 0.875em; }
   @media screen and (min-width: 640px) {
@@ -2366,7 +2381,7 @@ a {
   background-color: #202121;
   width: 100%;
   top: 0; }
-  @media screen and (min-width: 1405px) {
+  @media screen and (min-width: 1469px) {
     #masthead.scrolled-down > #site-navigation {
       top: -72px; } }
 #masthead.menu-open button {
@@ -2378,7 +2393,7 @@ a {
 #menu-btn-wrapper {
   z-index: 11;
   margin-top: -40px; }
-  @media screen and (min-width: 1405px) {
+  @media screen and (min-width: 1469px) {
     #menu-btn-wrapper {
       margin-top: -72px; } }
   #menu-btn-wrapper > button {
@@ -2398,7 +2413,7 @@ a {
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       #menu-btn-wrapper > button {
         background-position: -960px 0; } }
-    @media screen and (min-width: 1405px) {
+    @media screen and (min-width: 1469px) {
       #menu-btn-wrapper > button {
         display: none; } }
     #menu-btn-wrapper > button:after {
@@ -2410,14 +2425,14 @@ a {
   z-index: 10;
   position: relative;
   background-color: #202121; }
-  @media screen and (min-width: 1405px) {
+  @media screen and (min-width: 1469px) {
     #site-navigation {
       background-color: rgba(32, 33, 33, 0.8); } }
   #site-navigation > .menu-all-pages-as-single-container {
     text-align: center;
     visibility: hidden;
     overflow: hidden; }
-    @media screen and (min-width: 1405px) {
+    @media screen and (min-width: 1469px) {
       #site-navigation > .menu-all-pages-as-single-container {
         height: 72px;
         visibility: visible; } }
@@ -2444,7 +2459,7 @@ a {
         -webkit-column-rule: 2px dotted;
         -moz-column-rule: 2px dotted;
         column-rule: 2px dotted; } }
-  @media screen and (min-width: 1405px) {
+  @media screen and (min-width: 1469px) {
     #site-navigation ul {
       display: table;
       width: 100%; }
@@ -2684,7 +2699,7 @@ body,
 
 .site-branding {
   height: 100%;
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover; }
@@ -2703,11 +2718,10 @@ body,
       .site-branding > h1 {
         max-width: 960px; } }
   .site-branding > div > a,
-  .site-branding > span,
   .site-branding > h1,
   .site-branding > p {
     color: white;
-    text-shadow: 0 0 0.5em #202121; }
+    text-shadow: 0 0 0.2em #202121; }
   .site-branding > h1,
   .site-branding > p {
     position: relative;
@@ -2717,21 +2731,6 @@ body,
     font-size: 1.5em; }
     .site-branding > div > a:hover:after, .site-branding > div > a:active:after {
       font-size: 0; }
-  .site-branding > span {
-    position: absolute;
-    right: 1em;
-    bottom: 0.3em;
-    color: #ccc;
-    font-size: 0.7em; }
-    @media screen and (min-width: 1405px) {
-      .site-branding > span {
-        bottom: 79px; } }
-    .site-branding > span > a {
-      color: #ccc;
-      text-decoration: underline; }
-      .site-branding > span > a:hover, .site-branding > span > a:active, .site-branding > span > a:focus {
-        color: #e6e6e6;
-        text-decoration: none; }
   .site-branding > p {
     text-align: center;
     font-size: 1.5em;
@@ -2875,6 +2874,39 @@ object {
 
 .gallery-caption {
   display: block; }
+
+/*--------------------------------------------------------------
+12.3 CBR Gallery
+--------------------------------------------------------------*/
+.cbr-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+  list-style-type: none; }
+  .cbr-gallery > li {
+    flex-basis: 200px;
+    height: 200px;
+    background-size: 200px 200px;
+    margin: 0; }
+    .cbr-gallery > li > a {
+      display: block;
+      height: 100%; }
+      .cbr-gallery > li > a:hover::after, .cbr-gallery > li > a:active::after {
+        content: none; }
+
+html[data-useragent*="iPhone"] .cbr-gallery,
+html[data-useragent*="iPad"] .cbr-gallery,
+html[data-useragent*="iPod"] .cbr-gallery {
+  display: inline-block; }
+  html[data-useragent*="iPhone"] .cbr-gallery > li,
+  html[data-useragent*="iPad"] .cbr-gallery > li,
+  html[data-useragent*="iPod"] .cbr-gallery > li {
+    display: inline-block;
+    margin: -6px -3px;
+    width: 200px;
+    height: 200px;
+    background-size: 200px 200px; }
 
 /*--------------------------------------------------------------
 13.0 Browser hacks

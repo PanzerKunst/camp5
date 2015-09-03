@@ -8,10 +8,7 @@ module.exports = function (grunt) {
         eslint: {
             target: [
                 "wp-content/themes/camp5/js/camp5/**/*.js"
-            ],
-            options: {
-                configFile: "eslint.json"
-            }
+            ]
         },
 
         concat: {
@@ -30,6 +27,8 @@ module.exports = function (grunt) {
 
                     // Services
                     "wp-content/themes/camp5/js/camp5/services/browser.js",
+                    "wp-content/themes/camp5/js/camp5/services/jquery.parallax.js",
+                    "wp-content/themes/camp5/js/camp5/services/gallery.js",
 
                     // Models
 
@@ -76,7 +75,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['buildjs', 'buildcss']);
+    grunt.registerTask('default', ['buildjs', 'buildcss', 'watch']);
     grunt.registerTask('buildjs',  ['eslint', 'concat:js']);
     grunt.registerTask('buildcss',  ['sass', 'concat:css']);
 };
