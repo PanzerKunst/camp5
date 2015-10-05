@@ -262,7 +262,7 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function(c) {
             if (this.$menuBtn.is(":visible")) {
                 if (!wasScrolledDownEnough && this._isScrollDown(scrollPos) && this.$menuBtnWrapper.css("top") === "0px") {
                     TweenLite.set(this.$menuBtnWrapper, {top: this.menuBtnTopPosWhenHiddenPx});
-                } else if (!this.$siteHeader.hasClass("menu-open") && this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHiddenPx) {
+                } else if (this.$menuBtnWrapper.css("top") === this.menuBtnTopPosWhenHiddenPx) {
                     TweenLite.to(this.$menuBtnWrapper, CBR.defaultAnimationDuration, {top: 0});
                 }
             } else {
