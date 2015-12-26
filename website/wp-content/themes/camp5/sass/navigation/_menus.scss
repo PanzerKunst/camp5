@@ -7,7 +7,7 @@ $nav-bar-height: $menu-button-size;
     > #menu-btn-wrapper,
     > #site-navigation {
       position: fixed;
-      left: 0;
+      right: 0;
     }
 
     > #menu-btn-wrapper {
@@ -58,7 +58,11 @@ $nav-bar-height: $menu-button-size;
     margin-top: -$nav-bar-height-large-screen;
   }
 
+  @include clearfix;
+
   > button {
+    float: right;
+
     $menu-button-image-location-x: -1920px;
     $menu-button-image-location-y: 0;
 
@@ -73,8 +77,6 @@ $nav-bar-height: $menu-button-size;
 
     color: $color__border-input;
     padding: 0 8px 0 $menu-button-size;
-
-    display: block; // To avoid space in wrapper;
 
     @include large-menu-screen {
       display: none;
