@@ -1,3 +1,7 @@
 /website/.idea
 .sass-cache
 /website/node_modules
+/website/wp-admin
+/website/wp-includes
+/website/wp-content/plugins
+/website/wp-content/uploads
