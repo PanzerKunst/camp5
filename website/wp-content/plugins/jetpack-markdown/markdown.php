@@ -5,7 +5,7 @@
  * Plugin URI: http://wordpress.org/plugins/jetpack-markdown/
  * Description: Write posts or pages in plain-text Markdown syntax.
  * Author: JP Bot
- * Version: 3.6
+ * Version: 3.8.0
  * Text Domain: jetpack
  * Domain Path: /languages/
  * License: GPL2 or later
@@ -20,6 +20,7 @@
  * Requires Connection: No
  * Auto Activate: No
  * Module Tags: Writing
+ * Additional Search Queries: md, markdown
  */
 
 include_once dirname( __FILE__ ) . '/require-lib.php';
