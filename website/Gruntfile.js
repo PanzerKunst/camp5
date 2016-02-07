@@ -19,6 +19,9 @@ module.exports = function (grunt) {
                 src: [
                     // Non-CDN libs
                     "wp-content/themes/camp5/libs/p.js",
+                    "wp-content/themes/camp5/libs/photoswipe/photoswipe.min.js",
+                    "wp-content/themes/camp5/libs/photoswipe/photoswipe-ui-default.min.js",
+                    "wp-content/themes/camp5/libs/photoswipe/ps-gallery.js",
 
                     // Global
                     "wp-content/themes/camp5/js/camp5/global.js",
@@ -46,6 +49,8 @@ module.exports = function (grunt) {
                     'wp-content/themes/camp5/theme-header.css',
 
                     // Libs
+                    'wp-content/themes/camp5/libs/photoswipe/photoswipe.css',
+                    'wp-content/themes/camp5/libs/photoswipe/default-skin/default-skin.css',
 
                     // Rest
                     'wp-content/themes/camp5/style.css'

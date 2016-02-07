@@ -117,6 +117,7 @@ function camp5_scripts() {
     wp_enqueue_script('camp5-libs-gsap-scroll-to-plugin', 'http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.1/plugins/ScrollToPlugin.min.js', array(), false, true);
     wp_enqueue_script('camp5-libs-fastclick', 'http://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js', array(), false, true);
     wp_enqueue_script('camp5-libs-modernizr', 'http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), false, true);
+    wp_enqueue_script('camp5-libs-jquery-mousewheel', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js', array(), false, true);
 
     wp_enqueue_script('camp5-camp5', get_template_directory_uri() . '/js/camp5.js', array(), '20141201', true);
 

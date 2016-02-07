@@ -103,7 +103,10 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function(c) {
 
             var targetHeight = isMenuOpen ? this.menuContainerHeightExpanded : 0;
 
-            TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {height: targetHeight, ease: Power4.easeOut});
+            TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {
+                height: targetHeight,
+                ease: Power4.easeOut
+            });
 
             if (this.$siteHeader.hasClass("scrolled-down")) {
                 TweenLite.set(this.$nav, {width: "auto"});
@@ -113,9 +116,11 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function(c) {
                 }
 
                 var targetWidth = isMenuOpen ? this.menuContainerWidthExpanded : 0;
-                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {width: targetWidth, ease: Power4.easeOut, onComplete: function() {
-                    TweenLite.set(this.$nav, {width: "100%"});
-                }.bind(this)});
+                TweenLite.to(this.$menuContainer, CBR.defaultAnimationDuration, {
+                    width: targetWidth, ease: Power4.easeOut, onComplete: function() {
+                        TweenLite.set(this.$nav, {width: "100%"});
+                    }.bind(this)
+                });
             } else {
                 TweenLite.set(this.$menuContainer, {width: "auto"});
 
@@ -123,7 +128,10 @@ CBR.Controllers.Index = P(CBR.Controllers.Base, function(c) {
                     var scrollPos = this.$window.scrollTop();
                     if (scrollPos < this.menuContainerHeightExpanded) {
                         // We scroll down to make sure that the menu becomes visible
-                        TweenLite.to(window, CBR.defaultAnimationDuration, {scrollTo: this.menuContainerHeightExpanded, ease: Power4.easeOut});
+                        TweenLite.to(window, CBR.defaultAnimationDuration, {
+                            scrollTo: this.menuContainerHeightExpanded,
+                            ease: Power4.easeOut
+                        });
                     }
                 }
             }

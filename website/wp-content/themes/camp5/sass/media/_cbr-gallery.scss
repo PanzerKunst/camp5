@@ -5,20 +5,17 @@ $thumb-size: 200px;
   flex-wrap: wrap;
   justify-content: center;
 
-  padding-left: 0;
-  list-style-type: none;
-
-  > li {
+  > figure {
     flex-basis: $thumb-size;
     height: $thumb-size;
-
-    background-size: $thumb-size $thumb-size;
 
     margin: 0;
 
     > a {
       display: block;
       height: 100%;
+
+      background-size: $thumb-size $thumb-size;
 
       &:hover,
       &:active {
@@ -37,7 +34,7 @@ html[data-useragent*="iPod"] {
   .cbr-gallery {
     display: inline-block;
 
-    > li {
+    > figure {
       display: inline-block;
 
       margin: -6px -3px;
