@@ -25,20 +25,6 @@ a {
   &:hover,
   &:active {
     outline: 0;
-
-    &:after {
-      @include link-icon;
-      @include icon-font($fa-var-link);
-    }
-  }
-
-  &[target="_blank"] {
-    &:hover,
-    &:active {
-      &:after {
-        @include icon-font($fa-var-external-link-square);
-      }
-    }
   }
 
   &[href^="#"]:after {

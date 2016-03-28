@@ -87,8 +87,14 @@
   content: $content
 }
 
+@mixin styleless-btn {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
 @mixin large-menu-screen {
-  @media screen and (min-width: 1469px) {
+  @media screen and (min-width: 1140px) {
     @content;
   }
 }

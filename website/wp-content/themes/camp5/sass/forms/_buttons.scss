@@ -1,67 +1,107 @@
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-a.btn {
-  border: 1px solid;
-  border-color: $color__border-button;
-  border-radius: 3px;
-  background: $color__background-button;
-  box-shadow: inset 0 1px 0 transparentize($color__action, 0.5), inset 0 15px 17px transparentize($color__action, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: $color__text-btn;
-  cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-  line-height: 1;
-  padding: .6em 1em .7em;
-
-  &:hover,
-  &:focus {
-    border-color: $color__border-button-hover;
-    box-shadow: inset 0 1px 0 transparentize($color__action, 0.2), inset 0 15px 17px transparentize($color__action, 0.2), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-  }
-
-  &:active {
-    border-color: $color__border-button-focus;
-    box-shadow: inset 0 -1px 0 transparentize($color__action, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-  }
-}
-
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-}
-
-// Overriding default link styles
-a.btn {
-  &:visited,
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color__text-btn;
-    text-decoration: none;
-  }
-}
-
 button.styleless {
-  border: none;
-  box-shadow: none;
+  @include styleless-btn;
   padding: 0;
-  border-radius: 0;
 
   &:focus {
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    border-radius: 0;
+    @include styleless-btn;
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
-.ios {
-  button,
-  input[type="button"],
-  input[type="reset"],
-  input[type="submit"],
-  a.btn {
-    padding-top: .4em;
+.btn {
+  @include transition(color $default-animation-duration ease, background-color $default-animation-duration ease, border-color $default-animation-duration ease);
+  border-radius: 0.25em;
+
+  padding: 0.4em 1em;
+
+  > .fa-spinner {
+    margin: 0 0.5em 0 -0.6em;
   }
+}
+
+a.btn:visited {
+  color: white;
+}
+
+.btn-lg {
+  padding: 0.8em 2em;
+
+  > .fa-spinner {
+    margin-left: -1.25em;
+  }
+}
+
+.btn-default,
+a.btn-default,
+.btn-primary,
+a.btn-primary,
+.btn-success,
+a.btn-success,
+.btn-info,
+a.btn-info,
+.btn-warning,
+a.btn-warning,
+.btn-danger,
+a.btn-danger,
+.btn.sign-in-with-linkedin {
+  color: white;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:active:focus {
+    color: white;
+  }
+}
+
+.btn-default,
+a.btn-default {
+  background-color: $color__background-hr;
+  border-color: $color__background-hr;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:active:focus {
+    background-color: darken($color__background-hr, 15%);
+    border-color: darken($color__background-hr, 25%);
+  }
+
+  &[disabled],
+  &[disabled]:active,
+  &[disabled]:focus,
+  &[disabled]:hover {
+    background-color: lighten($color__background-hr, 35%);
+    border-color: lighten($color__background-hr, 35%);
+  }
+}
+
+.btn-primary,
+a.btn-primary {
+  background-color: $color__action;
+  border-color: $color__action;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:active:focus {
+    background-color: darken($color__action, 15%);
+    border-color: darken($color__action, 25%);
+  }
+
+  &[disabled],
+  &[disabled]:active,
+  &[disabled]:focus,
+  &[disabled]:hover {
+    background-color: $color__action;
+    border-color: $color__action;
+  }
+}
+
+.btn-file-upload {
+  padding: 0.18em 0.95em;
 }

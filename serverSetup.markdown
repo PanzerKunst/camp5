@@ -35,6 +35,13 @@ Update to `upload_max_filesize = 7M`
 `$ sudo service php5-fpm restart`
 
 
-# File permissions
+# File permissions & security
 
-`$ sudo chown -R www-data /home/play/camp5`
+    $ cd /home/play/camp5
+    $ find . -type f -exec chmod 444 {} \;
+    $ find . -type d -exec chmod 555 {} \;
+    $ cd wp-content/uploads
+    $ sudo chmod 755 .
+    $ find . -type f -exec chmod 444 {} \;
+    $ sudo find . -type d -exec chmod 755 {} \;
+    $ sudo chown -R www-data:www-data .

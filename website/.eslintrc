@@ -110,6 +110,4 @@ globals:
     Power2: true
     Power3: true
     Power4: true
-    PhotoSwipe: true
-    PhotoSwipeUI_Default: true
     initPhotoSwipeFromDOM: true
