@@ -13,6 +13,8 @@ button.styleless {
 }
 
 .btn {
+  display: inline-block;  // To handle multi-line
+
   @include transition(color $default-animation-duration ease, background-color $default-animation-duration ease, border-color $default-animation-duration ease);
   border-radius: 0.25em;
 
