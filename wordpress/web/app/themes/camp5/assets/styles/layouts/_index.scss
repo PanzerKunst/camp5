@@ -1,0 +1,60 @@
+#all-pages-as-single {
+    margin: 0;
+
+    > .menu-item {
+        &.img-bg {
+            background-size: cover;
+            background-position: center center;
+
+            text-shadow: 0 0 0.05em $background-body-color;
+        }
+
+        > header,
+        > article {
+            padding: 0 $spacer-unit-size;
+
+            @include medium-screen {
+                width: $medium-content-width;
+
+                padding-left: 0;
+                padding-right: 0;
+                margin: 0 auto;
+            }
+
+            @include large-screen {
+                width: $large-content-width;
+            }
+        }
+
+        > article {
+            padding-bottom: 2em;
+        }
+    }
+
+    h2 {
+        @include secondary-font;
+
+        font-size: 2em;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+
+        margin: 0 0 1em;
+        padding: 1em 0 0;
+    }
+}
+
+.menu-item-object-page > article {
+    > p,
+    > ul {
+        font-weight: lighter;
+
+        @include large-screen {
+            max-width: ($medium-content-width + $large-content-width) / 2;
+            font-size: 0.9em;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

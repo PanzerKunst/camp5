@@ -1,0 +1,35 @@
+{
+    "dependencies": {
+        "main.js": {
+            "files": [
+                "scripts/global.js",
+                "scripts/services/animator.js",
+                "scripts/services/array.js",
+                "scripts/services/browser.js",
+                "scripts/services/keyboard.js",
+                "scripts/services/string.js",
+                "scripts/controllers/common.js",
+                "scripts/controllers/index.js",
+                "scripts/main.js"
+            ],
+            "main": true
+        },
+        "main.css": {
+            "files": [
+                "styles/main.scss"
+            ],
+            "main": true
+        },
+        "vendor.js": {
+            "bower": [
+                "jquery"
+            ],
+            "files": [
+                "../vendor/modernizr-custom.js"
+            ]
+        }
+    },
+    "config": {
+        "devUrl": "http://example.dev"
+    }
+}

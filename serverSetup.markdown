@@ -20,7 +20,9 @@ Set the `root` to `/home/play/camp5/web`
 
 Add `index.php` at the end of the following line: `index index.html index.htm index.nginx-debian.html;`
 
-Below the `location /` declaration, uncomment section `location ~ \.php$`
+To enable permalinks, in the `location /` section, update the `try_files` declaration to that defined in [General Wordpress rules for Nginx](https://codex.wordpress.org/Nginx#General_WordPress_rules).
+
+Below that section, uncomment section `location ~ \.php$`
 
 Keep line `fastcgi_pass 127.0.0.1:9000;` commented, but uncomment `fastcgi_pass unix:/run/php/php7.0-fpm.sock;`
 
@@ -76,3 +78,6 @@ Replace the `bind-address` line to `bind-address = 0.0.0.0`
 
     $ cd /home/play/camp5
     $ sudo chown -R www-data:www-data .
+    $ sudo find . -type d -exec chmod 775 {} \;
+    $ sudo find . -type f -exec chmod 664 {} \;
+

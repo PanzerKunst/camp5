@@ -1,0 +1,46 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bourbon": "^4.2.7",
+    "classnames": "^2.2.5",
+    "gsap": "^1.19.0",
+    "js-breakpoints": "^1.0.2",
+    "lodash": "^4.17.2",
+    "react": "^15.4.1",
+    "font-awesome": "^4.7.0"
+  },
+  "overrides": {
+    "gsap": {
+        "main": [
+            "./src/uncompressed/TweenLite.js",
+            "./src/uncompressed/easing/EasePack.js",
+            "./src/uncompressed/plugins/CSSPlugin.js",
+            "./src/uncompressed/plugins/ScrollToPlugin.js"
+        ]
+    },
+    "js-breakpoints": {
+        "main": [
+            "./breakpoints.js",
+            "./breakpoints.scss"
+        ]
+    },
+    "react": {
+        "main": [
+            "./react.min.js",
+            "./react-dom.min.js"
+        ]
+    },
+    "font-awesome": {
+        "main": [
+            "./scss/font-awesome.scss",
+            "./fonts/*"
+        ]
+    }
+  }
+}

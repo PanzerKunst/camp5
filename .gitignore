@@ -1,11 +1,1 @@
-/website/.idea
-.sass-cache
-/website/node_modules
-/website/wp-admin
-/website/wp-includes
-/website/wp-content/plugins
-/website/wp-content/uploads
-/website/wp-content/themes/camp5/js/camp5.js
-/website/wp-content/themes/camp5/style.css
-/website/wp-content/themes/camp5/style.css.map
-*.iml
+.idea

@@ -1,0 +1,11 @@
+a,
+a:visited {
+  color: $text-color;
+  cursor: pointer; // To have the pointer on anchors which don't have any href
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $text-color;
+}

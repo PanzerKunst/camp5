@@ -1,0 +1,98 @@
+.nav-primary {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $z-index-menu;
+
+    font-size: 16px;
+    @include text-shadow;
+
+    padding-top: 1.3em;
+    @include medium-screen {
+        padding-top: 2em;
+    }
+    @include large-screen {
+        padding-top: 2.7em;
+    }
+
+    > a,
+    > .menu-main-menu-container {
+        display: inline-block;
+    }
+
+    a,
+    a:hover,
+    a:visited {
+        color: $background-body-color;
+    }
+}
+
+#site-header {
+    color: $background-body-color;
+    @include secondary-font;
+    text-transform: uppercase;
+
+    > .container {
+        background-size: cover;
+        background-position: center center;
+
+        padding-bottom: 4em;
+    }
+
+    > .nav-primary {
+        background-color: transparent;
+        transition: background-color $default-animation-duration ease, padding $default-animation-duration ease;
+    }
+
+    &.scrolled-down > .nav-primary {
+        background-color: transparentize($text-color, 0.2);
+
+        padding: 0.5em 0 0.4em;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    .title {
+        text-align: center;
+        font-weight: normal;
+        font-size: 2.5em;
+
+        @include text-shadow;
+
+        margin: 0;
+        padding: 1.3em 0 1em;
+
+        display: inline-block;
+        max-width: 13em;
+    }
+
+    .subtext {
+        color: $text-color;
+        background-color: $background-body-color;
+        font-weight: 700;
+        font-size: 1.2em;
+
+        padding: 0.5em 1em;
+
+        > span {
+            padding: 0 0.5em;
+        }
+    }
+}
+
+#menu-main-menu {
+    margin-bottom: 0;
+
+    > .menu-item {
+        display: inline-block;
+        margin-right: 0.9em;
+
+        // Hiding the link to the Summary
+        &:first-child {
+            display: none;
+        }
+    }
+}
