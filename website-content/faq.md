@@ -1,27 +1,31 @@
-## Hur fungerar medlemskap?
+### How does membership work?
 
-Camp5 medlemskap är personligt och ditt riktiga namn och e-post address måste vara med i vårt system för att du ska delta.
+Camp5 memberships are personal and your name and e-mail address must be in our system for you to be able to participate.
 
-Det är möjligt att överföra ditt medlemskap till någon annan om du inte har möjlighet att närvara. "Att sälja" ditt medlemskap för högre pris än det ursprungliga är inte tillåtet och kan leda till att medlemskapet raderas helt.
+If you cannot attend, you can always transfer your membership to someone else. "Selling" your membership for higher than the price you paid is forbidden, and can lead to its cancellation.
 
-All överföring måste göras senast 16e maj. Efter detta datum är vårt medlemskapslista färdig. För att överföra ett medlemskap, [skriv ett mail till oss](mailto:cbramdit@gmail.com) med namn och e-post på mottagaren.
+All transfers need to be done on May 21st latest. After this date, our list of participants is final. To transfer a membership, [write us an e-mail](mailto:camp5gathering@gmail.com) with the name and email of the recipient.
 
-Barn yngre än 13 år deltar gratis. Deltagare under 18 år får bara delta i vuxet sällskap.
+Children younger than 13 participate for free. Participants under 18 can only participate in the company of an adult.
 
-Genom att registrera sig som medlem, samtycker man till [Deltagaravtalet](/participation-agreement).
+By registering yourself as a participant, you agree to the <a href="https://docs.google.com/document/d/1PsSc3zXridFHQmNoUsuHzXBURn3vCiFn5CrvMjW3y2w/edit" target="_blank">Event Participation Agreement</a>. 
 
-## Kan jag delta i Camp5 kortare än hela veckan?
 
-Absolut. Men det finns bara 1 typ av medlemskap, så det kostar samma när man deltar 1 dag, eller 8 dagar.
+### Can I come for shorter than the whole week?
 
-## Jag behöver hjälp för transport eller camping!
+Absolutely. But there is only one type of membership, so it costs the same if we participate for one day, or for eight.
 
-Då borde du gå med i vår Facebook grupp <a href="https://www.facebook.com/groups/camp5.rideshares.and.camping.organisation" target="_blank">Rideshares and Camping Organisation</a> och skriva en inlägg med vad du behöver hjälp med. Gå också med i gruppen om du kan hjälpa andra med det, tack!
 
-## Hur använder ni pengar från medlemskap?
+### I need help for transport or camping!
 
-Camp5 är ett icke-vinstdrivande evenemang. Pengar från medlemskap används uteslutande för att täcka kostnaderna för eventet.
+In that case we invite you to join our <a href="https://www.facebook.com/groups/camp5.rideshares.and.camping.organisation" target="_blank">Rideshares and Camping Organisation</a> Facebook group, and to write a post with what you need help with. Please also join that group if you have the possibility to help, thank you! 
 
-## Jag vill delta med något som gynnar hela evenemanget. Kan Camp5 stödja mig ekonomiskt?
 
-Förmodligen kan vi använda Camp5 budgeten för det. Kan du skriva mera detaljer i Facebook gruppen?
+### What is the money from memberships used for?
+
+Camp5 is a not-for-profit event. The money gathered from memberships in used exclusively to cover costs. Nobody is paid anything. After each event, the detailed budget is published publicly in the Facebook group.
+
+
+### I wish to participate with something which benefits the whole event. Can Camp5 support me financially?
+
+Yes! We can most probably use the Camp5 budget for it. Can you write more details about your project in our Facebook group?

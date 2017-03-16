@@ -1,10 +1,5 @@
-Vi slår läger på detta område:
-![Feld](/wp-content/uploads/2015/09/meadow.jpg)
+We will camp in this area:
+![Campsite](/app/uploads/2017/03/campsite1.jpg)
 
-Och här är en översikt över hur hela campingen potentiellt kommer att läggas ut:
-![Camping zone](/wp-content/uploads/2015/03/Detailed-camping-zone.jpg)
-
-Vi kan tvätta oss själva i Mälaren, som ligger ca 8 km söder.
-
-Lägret ligger mycket nära bouldersen:
-![Camp and boulders](/wp-content/uploads/2015/03/camp-and-boulder-area.png)
+And the campsite is insanely close to the boulders:
+![Camp and boulders](/app/uploads/2017/03/How_close_to_boulders.jpg)

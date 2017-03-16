@@ -1,0 +1,11 @@
+#summary.menu-item {    // `.menu-item` to get enough specificity
+    @include alternate-bg;
+
+    > header {
+        display: none;
+    }
+
+    > article {
+        padding-top: 3em;
+    }
+}

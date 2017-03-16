@@ -1,28 +1,28 @@
-Bilder av Camp5 2015:
+Some pictures of Camp5 in 2016 and a few of 2015 to give you an idea:
 
 <div class="cbr-gallery">
  <figure data-file-name="acroyoga.jpg" data-size="1081x720"></figure>
- <figure data-file-name="after-dinner.jpg" data-size="1081x720"></figure>
- <figure data-file-name="after-the-rain.jpg" data-size="1081x720"></figure>
- <figure data-file-name="anders-climbing.jpg" data-size="720x1081"></figure>
- <figure data-file-name="campfire-at-night-1.jpg" data-size="1086x720"></figure>
- <figure data-file-name="campfire-at-night-2.jpg" data-size="1081x720"></figure>
- <figure data-file-name="campfire-at-night-closeup-1.jpg" data-size="1081x720"></figure>
- <figure data-file-name="campfire-at-night-closeup-2.jpg" data-size="1081x720"></figure>
- <figure data-file-name="camp-overview-at-sunset.jpg" data-size="1920x1440"></figure>
- <figure data-file-name="community-tent-at-night.jpg" data-size="1086x720"></figure>
- <figure data-file-name="dinner.jpg" data-size="1086x720"></figure>
- <figure data-file-name="dishwashing.jpg" data-size="1081x720"></figure>
- <figure data-file-name="emma-climbing.jpg" data-size="1081x720"></figure>
- <figure data-file-name="epicness.jpg" data-size="1081x720"></figure>
- <figure data-file-name="friends.jpg" data-size="1081x720"></figure>
- <figure data-file-name="hair-wash.jpg" data-size="1081x720"></figure>
+ <figure data-file-name="around-the-campfire-1.jpg" data-size="1920x1280"></figure>
+ <figure data-file-name="ashkan-on-the-mic.jpg" data-size="1280x1920"></figure>
+ <figure data-file-name="noa-climbing.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="epic.jpg" data-size="960x600"></figure>
+ <figure data-file-name="david-climbing.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="jessica-climbing.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="going-bouldering.jpg" data-size="2132x1200"></figure>
  <figure data-file-name="harmonica.jpg" data-size="2048x1363"></figure>
- <figure data-file-name="kids.jpg" data-size="1086x720"></figure>
- <figure data-file-name="kylskap-problemet.jpg" data-size="1081x720"></figure>
  <figure data-file-name="malin-climbing.jpg" data-size="720x1081"></figure>
- <figure data-file-name="saturday-night-2.jpg" data-size="1086x720"></figure>
- <figure data-file-name="slackline.jpg" data-size="1081x720"></figure>
- <figure data-file-name="spotting.jpg" data-size="1081x720"></figure>
- <figure data-file-name="sunset.jpg" data-size="1521x1110"></figure>
+ <figure data-file-name="noa-climbing-2.jpg" data-size="1280x1920"></figure>
+ <figure data-file-name="ashkan-climbing.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="around-the-campfire-2.jpg" data-size="1920x1280"></figure>
+ <figure data-file-name="camp-overview-2.jpg" data-size="1920x1280"></figure>
+ <figure data-file-name="painting.jpg" data-size="1440x1920"></figure>
+ <figure data-file-name="around-the-campfire-3.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="play.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="playing-piano.jpg" data-size="2133x1200"></figure>
+ <figure data-file-name="camp-overview-1.jpg" data-size="1920x1280"></figure>
+ <figure data-file-name="playing-werewolves.jpg" data-size="2133x1200"></figure>
+ <figure data-file-name="slacklining-like-a-boss.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="sunset-at-the-camp.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="tomas-climbing.jpg" data-size="2132x1200"></figure>
+ <figure data-file-name="twelve-course-dinner.jpg" data-size="2133x1200"></figure>
 </div>

@@ -148,11 +148,13 @@ globals:
     ReactDOM: true
     classNames: true
     TweenLite: true
+    Power0: true
     Power4: true
     moment: true
     Modernizr: true
     CB: true
     FB: true
+    initPhotoSwipeFromDOM: true
 
 ecmaFeatures:
     jsx: true

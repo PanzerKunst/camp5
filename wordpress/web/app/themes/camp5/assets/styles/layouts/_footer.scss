@@ -1,2 +1,5 @@
 body > footer {
+    @include alternate-bg;
+
+    padding: 2em 0;
 }

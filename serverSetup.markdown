@@ -1,6 +1,21 @@
+# First boot after Ubuntu installation
+
+Login as "root", then:
+
+    $ adduser play
+    $ adduser play sudo
+    $ exit
+
+
+Login as "play", then:
+
+    $ sudo apt-get update
+    $ sudo apt-get upgrade
+
+
 # Add missing packages for Wordpress
 
-`$ sudo apt-get install mysql-client mysql-server nginx php-fpm php-mysql`
+`$ sudo apt-get install screen mysql-client mysql-server nginx php-fpm php-mysql`
 
 
 # Secure the database server
@@ -76,8 +91,8 @@ Replace the `bind-address` line to `bind-address = 0.0.0.0`
 
 # File permissions & security
 
+    $ sudo adduser play www-data
     $ cd /home/play/camp5
     $ sudo chown -R www-data:www-data .
     $ sudo find . -type d -exec chmod 775 {} \;
     $ sudo find . -type f -exec chmod 664 {} \;
-

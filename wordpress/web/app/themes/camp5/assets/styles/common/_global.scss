@@ -10,12 +10,12 @@ body {
     @include primary-font;
 
     @include medium-screen {
-        font-size: $font-size-base-em * $medium-screen-ratio-m;
+        font-size: font-size(base-em) * $medium-screen-ratio-m;
 
         @include defineBreakpoint("GLOBAL_MEDIUM_SCREEN_BREAKPOINT");
     }
     @include large-screen {
-        font-size: $font-size-base-em * $large-screen-ratio-m;
+        font-size: font-size(base-em) * $large-screen-ratio-m;
 
         @include defineBreakpoint("GLOBAL_LARGE_SCREEN_BREAKPOINT");
     }

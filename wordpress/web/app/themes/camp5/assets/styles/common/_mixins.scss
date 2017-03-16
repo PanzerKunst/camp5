@@ -1,17 +1,44 @@
+@function color($key) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $colors.";
+    @return null;
+}
+
+@function font-size($key) {
+    @if map-has-key($font-sizes, $key) {
+        @return map-get($font-sizes, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $font-sizes.";
+    @return null;
+}
+
+@function content-width($key) {
+    @if map-has-key($content-widths, $key) {
+        @return map-get($content-widths, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $content-widths.";
+    @return null;
+}
+
 @mixin medium-screen {
-    @media screen and (min-width: $medium-content-width) {
+    @media screen and (min-width: content-width(medium)) {
         @content;
     }
 }
 
 @mixin large-screen {
-    @media screen and (min-width: $large-content-width) {
+    @media screen and (min-width: content-width(large)) {
         @content;
     }
 }
 
 @mixin xl-screen {
-    @media screen and (min-width: $xl-content-width) {
+    @media screen and (min-width: content-width(xl)) {
         @content;
     }
 }
@@ -37,7 +64,7 @@
 }
 
 @function px-to-em($px) {
-    @return #{$px / $font-size-base-px}em;
+    @return #{$px / font-size(base-px)}em;
 }
 
 @mixin icon-font($content) {
@@ -70,7 +97,7 @@
     background-color: transparent;
 }
 
-@mixin text-shadow($color: $dark-grey) {
+@mixin text-shadow($color: color(dark-grey)) {
     text-shadow: 0 0 0.2em $color;
 }
 
@@ -87,7 +114,7 @@
 }
 
 @mixin project-border {
-    border: 1px solid $well-border-color;
+    border: 1px solid color(well-border);
     border-radius: $default-border-radius;
 }
 
@@ -100,16 +127,35 @@
 }
 
 @mixin dashed-border-bottom {
-    border-bottom: 1px dashed $well-border-color;
+    border-bottom: 1px dashed color(well-border);
 }
 
 @mixin primary-btn {
-    background-color: $action-color;
-    color: $background-body-color;
+    background-color: color(action);
+    color: color(background-body);
 
     padding: 0.5em 3em;
     border-radius: 0.1em;
 
     @include secondary-font;
     text-transform: uppercase;
+}
+
+@mixin alternate-bg($i: 0) {
+    @if $i == 1 {
+        background-color: color(action);
+    } @else if $i == 2 {
+        background-color: color(secondary-action);
+    } @else if $i == 3 {
+        background-color: color(primary-btn);
+    } @else {
+        background-color: color(text);
+    }
+
+    color: color(background-body);
+
+    a,
+    a:visited {
+        color: color(background-body);
+    }
 }

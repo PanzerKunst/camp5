@@ -1,7 +1,7 @@
-- Hyr fältet som används som vår campingplats, vilket gör det till ett privat utrymme för veckan
-- Ett trevligt gemenskapsutrymme. Färgglatt, bekvämt och socialt, särskilt för kvällar och nätter. En liten bar, ett utrymme för uttryck (för workshops, föreställningar, etc), ett litet ljudsystem, ...
-- Bajamajor
-- En mysig brasa nära gemenskapsutrymmet
-- Elektricitet för det mest nödvändiga
+- Renting the place used for our camping site, making it a private space for the week
+- A nice community space, rainproof. Colourful, comfortable, and social, especially for evenings and nights.
+- Renting toilets
+- A cozy fireplace near the community tent
+- A bit of electricity
 
-**Allt annat bör tas om hand av deltagarna**. Detta innebär att du kommer att ta med ditt eget dricksvatten och mat för hela veckan, + att ta hand om dina egna sopor.
+**Everything else should be taken care of by the participants**. This means that you will bring your own food for the whole week, and you'll have to take care of your garbage.

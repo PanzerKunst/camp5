@@ -1,26 +1,22 @@
-Dessa checklistor är inte heltäckande, men du bör kunna överleva din vecka på Camp5 om du följer dem ;)
+These checklists aren't exhaustive, but you should be able to survive Camp5 if you follow them :)
 
 
-## Individuell checklista
+### Individual checklist
 
-- Klätterskor, kritpåse och borste
-- Tält
-- Varm campingsäng (temperatur kan gå ner till 7 grader i natten)
-- Badkläder & handduk
-- Fick-/pannlampa
-- Miljövänlig tvål och schampo
-- Myggmedel
-- *[Gemenskapsutrymme]* 1 kudde (som du tar med dig tillbaka efter händelsen)
-- *[Gemenskapsutrymme]* 1 alkohol dryck + 1 läsk (för dem som vill använda den fria baren)
+- Your usual equipment for bouldering / acroyoga / flow / slacklining
+- Tent
+- Warm camping bedding (temperature can go down to 7 degrees at night)
+- Bathing clothes and towel
+- Torch or headlamp
+- Ecological soap and shampoo
+- Mosquito repellant
 
 
-## Checklista för din camp
+### Checklist for your camp
 
-- Transport till Camp5, förslagsvis med bil
-- Mat för en vecka
-- 3.5L dricksvatten per person per dygn. (Till exempel en <a href="https://www.okq8.se/produkter/hem-och-fritid/dunkar/vattendunk-25l" target="_blank">25L dricksvattenbehållare</a> som du fyller med kranvatten innan du lämnar ditt hem.)
-- Soppåsar
-- Matlagningsutrustning
-- Toalettpapper
-- Hushållspapper
-- ... Och crashpads!
+- Transport to Camp5; by car is the most convenient because you’ll need to bring:
+- Enough food for the week
+- Garbage bags
+- Camping kitchen
+- Toilet paper
+- Paper towels

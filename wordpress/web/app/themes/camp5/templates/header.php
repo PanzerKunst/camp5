@@ -7,7 +7,10 @@
             <span class="title"><?php bloginfo('description'); ?></span>
         </div>
         <div class="centered-contents">
-            <span class="subtext">11-18<span>June</span>2017</span>
+            <div class="subtext">
+                <p class="subtext-dates">11-18<span>June</span>2017</p>
+                <p class="subtext-location">Åland</p>
+            </div>
         </div>
     </div>
     <nav class="nav-primary centered-contents">

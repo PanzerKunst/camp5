@@ -225,6 +225,13 @@ gulp.task('images', function() {
         .pipe(browserSync.stream());
 });
 
+// ### SVG
+// `gulp photoswipe-svg`
+gulp.task('photoswipe-svg', function() {
+    return gulp.src("./bower_components/photoswipe/dist/default-skin/*.svg")
+        .pipe(gulp.dest(path.dist + 'images'));
+});
+
 // ### ESLint
 // `gulp lint` - Lints project JS.
 gulp.task('lint', function() {
@@ -272,7 +279,7 @@ gulp.task('watch', function() {
 gulp.task('build', function(callback) {
     runSequence('styles',
         'scripts',
-        ['fonts', 'images'],
+        ['fonts', 'images', 'photoswipe-svg'],
         callback);
 });
 

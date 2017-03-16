@@ -8,6 +8,7 @@
                 "scripts/services/browser.js",
                 "scripts/services/keyboard.js",
                 "scripts/services/string.js",
+                "scripts/services/cbrGallery.js",
                 "scripts/controllers/common.js",
                 "scripts/controllers/index.js",
                 "scripts/main.js"
@@ -25,7 +26,8 @@
                 "jquery"
             ],
             "files": [
-                "../vendor/modernizr-custom.js"
+                "../vendor/modernizr-custom.js",
+                "../vendor/ps-gallery.js"
             ]
         }
     },

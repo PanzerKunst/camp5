@@ -24,12 +24,12 @@
     a,
     a:hover,
     a:visited {
-        color: $background-body-color;
+        color: color(background-body);
     }
 }
 
 #site-header {
-    color: $background-body-color;
+    color: color(background-body);
     @include secondary-font;
     text-transform: uppercase;
 
@@ -43,16 +43,27 @@
     > .nav-primary {
         background-color: transparent;
         transition: background-color $default-animation-duration ease, padding $default-animation-duration ease;
+
+        // TODO: remove when small-screen menu implemented
+        display: none;
+        @include large-screen {
+            display: block;
+        }
     }
 
     &.scrolled-down > .nav-primary {
-        background-color: transparentize($text-color, 0.2);
+        background-color: transparentize(color(text), 0.2);
 
         padding: 0.5em 0 0.4em;
     }
 
     h1 {
         display: none;
+    }
+
+    a,
+    a:visited {
+        text-decoration: none;
     }
 
     .title {
@@ -62,23 +73,35 @@
 
         @include text-shadow;
 
-        margin: 0;
-        padding: 1.3em 0 1em;
-
         display: inline-block;
         max-width: 13em;
+
+        padding: 10vh 0;
+        @include medium-screen {
+            padding: 20vh 0;
+        }
+
+        margin: 0;
     }
 
     .subtext {
-        color: $text-color;
-        background-color: $background-body-color;
+        color: color(background-body);
+        background-color: black;
         font-weight: 700;
         font-size: 1.2em;
 
-        padding: 0.5em 1em;
+        padding: 0.3em 1em;
 
-        > span {
-            padding: 0 0.5em;
+        display: inline-block;
+        max-width: 10em;
+
+        > p {
+            margin: 0;
+            text-align: center;
+
+            > span {
+                margin: 0 0.5em;
+            }
         }
     }
 }

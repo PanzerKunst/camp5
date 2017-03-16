@@ -1,10 +1,13 @@
 // Pre-libs vendor overrides
+@import "vendor-overrides/pre-import/photoswipe";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "../../bower_components/js-breakpoints/breakpoints.scss";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/photoswipe/src/css/main.scss";
+@import "../../bower_components/photoswipe/src/css/default-skin/default-skin.scss";
 // endbower
 
 // Post-libs vendor overrides
@@ -29,6 +32,7 @@
 @import "components/links";
 @import "components/lists";
 @import "components/headings";
+@import "components/cbrGallery";
 
 // Layouts and partials
 @import "layouts/header";
@@ -38,6 +42,12 @@
 @import "layouts/posts";
 @import "layouts/tinymce";
 @import "layouts/index";
+@import "layouts/pages/summary";
+@import "layouts/pages/pictures";
+@import "layouts/pages/event-principles";
+@import "layouts/pages/camping-area";
+@import "layouts/pages/what-the-organiser-provides";
+@import "layouts/pages/your-checklists";
 
 // Browser hacks
-@import "_browserSpecific";
+@import "browserSpecific";
