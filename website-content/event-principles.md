@@ -1,4 +1,4 @@
-Camp5 is based on four principles:
+Camp5 is based on 4 principles:
 
 - **Leave no trace**: We must leave the environment as we found it. This means that upon leaving the event, each of us needs to take back everything we brought, including the trash generated during our stay.
 - **Participation**: Everyone is invited to make Camp5 their event. Do you wish to participate with an activity? Please add it to the event’s <a href="#" target="_blank">Google doc</a> and also let us know about it in the <a href="https://www.facebook.com/groups/camp5" target="_blank">Facebook group</a>.

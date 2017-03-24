@@ -6,4 +6,4 @@ The camp is designed around a community tent - a space where we hang out and do 
 
 It costs 350 SEK (early bird) or 700 SEK (regular price) to participate in Camp5. The money collected from memberships is used exclusively to cover expenses. We organise this gathering on a voluntary basis, and everyone is welcome to help out :)
 
-You can buy your membership here: <a href="http://camp5-2017.eventbrite.com" target="_blank">http://camp5-2017.eventbrite.com</a>. Early bird registrations end on April 9, and regular-priced ones on May 21st.
+You can buy your membership here: <a href="http://camp5-2017.eventbrite.com" target="_blank">http://camp5-2017.eventbrite.com</a>. Early bird registrations end on April 16, and regular-priced ones on May 21st.

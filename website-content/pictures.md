@@ -26,3 +26,7 @@ Some pictures of Camp5 in 2016 and a few of 2015 to give you an idea:
  <figure data-file-name="tomas-climbing.jpg" data-size="2132x1200"></figure>
  <figure data-file-name="twelve-course-dinner.jpg" data-size="2133x1200"></figure>
 </div>
+
+<div class="centered-contents">
+    <a href="http://camp5-2017.eventbrite.com" target="_blank" class="btn">Ok ok I get it...<br/>shut up and take my money!</a>
+</div>

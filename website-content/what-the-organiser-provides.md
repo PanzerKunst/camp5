@@ -1,4 +1,4 @@
-- Renting the place used for our camping site, making it a private space for the week
+- Renting the place used for our camping site, making it a private space for the week.
 - A nice community space, rainproof. Colourful, comfortable, and social, especially for evenings and nights.
 - Renting toilets
 - A cozy fireplace near the community tent

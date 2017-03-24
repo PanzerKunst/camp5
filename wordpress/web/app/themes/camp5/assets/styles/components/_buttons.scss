@@ -9,7 +9,9 @@ button.styleless {
   }
 }
 
-a.btn {
+a.btn,
+a:visited.btn,
+a:hover.btn {
     @include styleless-btn;
 
     display: inline-block;
@@ -22,4 +24,9 @@ a.btn {
 
     padding: 0.4em 1em;
     border-radius: 0.1em;
+
+    @include bottom-shadow(black, 30%);
+    &:active {
+        box-shadow: none;
+    }
 }
