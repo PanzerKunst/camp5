@@ -23,7 +23,7 @@ In that case we invite you to join our <a href="https://www.facebook.com/groups/
 
 ### What is the money from memberships used for?
 
-Camp5 is a not-for-profit event. The money gathered from memberships in used exclusively to cover costs. Nobody is paid anything. After each event, the detailed budget is published publicly in the Facebook group.
+Camp5 is a not-for-profit event. The money gathered from memberships in used exclusively to cover costs. Nobody is paid anything. After each event, the detailed budget is published in the Facebook group.
 
 
 ### I wish to participate with something which benefits the whole event. Can Camp5 support me financially?
