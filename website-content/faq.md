@@ -1,6 +1,6 @@
 ### How does membership work?
 
-Camp5 memberships are personal and your name and e-mail address must be in our system for you to be able to participate.
+Camp5 memberships are personal and your name and e-mail address must be in our system for you to participate.
 
 If you cannot attend, you can always transfer your membership to someone else. "Selling" your membership for higher than the price you paid is forbidden, and can lead to its cancellation.
 
