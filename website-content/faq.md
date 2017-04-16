@@ -2,7 +2,7 @@
 
 Camp5 memberships are personal and your name and e-mail address must be in our system for you to participate.
 
-If you cannot attend, you can always transfer your membership to someone else. "Selling" your membership for higher than the price you paid is forbidden, and can lead to its cancellation.
+If you cannot attend, you can always transfer your membership to someone else. "Selling" your membership for more than the price you paid is forbidden, and can lead to its cancellation.
 
 All transfers need to be done on May 21st latest. After this date, our list of participants is final. To transfer a membership, [write us an e-mail](mailto:camp5gathering@gmail.com) with the name and email of the recipient.
 
