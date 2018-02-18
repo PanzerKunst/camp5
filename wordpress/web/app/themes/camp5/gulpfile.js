@@ -56,7 +56,7 @@ var enabled = {
     // Enable static asset revisioning when `--production`
     rev: argv.production,
     // Disable source maps when `--production`
-    maps: !argv.production,
+    maps: false,
     // Fail styles task on error when `--production`
     failStyleTask: argv.production,
     // Strip debug statments from javascript when `--production`
@@ -134,11 +134,12 @@ var jsTasks = function(filename) {
             });
         })
         .pipe(concat, filename)
+        /* We don't want JS compression
         .pipe(uglify, {
             compress: {
                 'drop_debugger': enabled.stripJSDebug
             }
-        })
+        }) */
         .pipe(function() {
             return gulpif(enabled.rev, rev());
         })
@@ -216,11 +217,12 @@ gulp.task('fonts', function() {
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
     return gulp.src(globs.images)
+        /* TODO this makes the script fail
         .pipe(imagemin({
             progressive: true,
             interlaced: true,
             svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
-        }))
+        })) */
         .pipe(gulp.dest(path.dist + 'images'))
         .pipe(browserSync.stream());
 });

@@ -2,5 +2,11 @@
   "presets": [
     "es2015",
     "react"
-  ]
+  ],
+    "ignore": [
+        "./bower_components/photoswipe/dist/photoswipe.js",
+        "./bower_components/photoswipe/dist/photoswipe-ui-default.js",
+        "./bower_components/react/react.production.min.js",
+        "./bower_components/react/react-dom.production.min.js"
+    ]
 }

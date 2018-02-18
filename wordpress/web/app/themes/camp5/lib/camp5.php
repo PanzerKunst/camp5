@@ -56,7 +56,7 @@ class Walker_Index_All_Pages_As_Single extends \Walker_Nav_Menu {
      *
      * @see Walker::start_el()
      *
-     * @param string   $output Passed by reference. Used to append additional content.
+     * @param string   $output Used to append additional content (passed by reference).
      * @param WP_Post  $item   Menu item data object.
      * @param int      $depth  Depth of menu item. Used for padding.
      * @param stdClass $args   An object of wp_nav_menu() arguments.
@@ -202,7 +202,7 @@ class Walker_Main_Menu extends \Walker_Nav_Menu {
      *
      * @see Walker::start_el()
      *
-     * @param string   $output Passed by reference. Used to append additional content.
+     * @param string   $output Used to append additional content (passed by reference).
      * @param WP_Post  $item   Menu item data object.
      * @param int      $depth  Depth of menu item. Used for padding.
      * @param stdClass $args   An object of wp_nav_menu() arguments.

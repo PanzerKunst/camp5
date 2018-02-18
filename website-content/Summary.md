@@ -2,8 +2,6 @@ From June 11 to 18th, Camp5 will arise for the third time. This event was born a
 
 The location will be on Åland this year. The campsite is only a few hundred meters away from the <a href="https://27crags.com/crags/kasviken" target="_blank">Kasviken</a> bouldering crag. It is in the forest, by the sea.
 
-The camp is designed around a community tent - a space where we hang out and do all sorts of activities.
-
 It costs 350 SEK (early bird) or 700 SEK (regular price) to participate in Camp5. The money collected from memberships is used exclusively to cover expenses. We organise this gathering on a voluntary basis, and everyone is welcome to help out :)
 
 You can buy your membership here: <a href="http://camp5-2017.eventbrite.com" target="_blank">http://camp5-2017.eventbrite.com</a>. Early bird registrations end on April 16, and regular-priced ones on May 21st.

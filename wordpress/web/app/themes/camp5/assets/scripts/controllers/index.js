@@ -22,6 +22,12 @@ CB.Controllers.Index = {
         this._initElements();
         this._initHeaderBackground();
         CB.Services.CbrGallery.init(`${CB.themeRoot}/dist/images/cbr-gallery/thumbs/`, `${CB.themeRoot}/dist/images/cbr-gallery/full/`);
+
+        /* TODO: remove
+        ReactDOM.render(
+            <ShoppingList name="Mark" />,
+            document.getElementById("site-header")
+        ); */
     },
 
     _initElements() {

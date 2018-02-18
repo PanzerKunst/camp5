@@ -2,7 +2,7 @@
 
 Camp5 memberships are personal and your name and e-mail address must be in our system for you to participate.
 
-If you cannot attend, you can always transfer your membership to someone else. "Selling" your membership for more than the price you paid is forbidden, and can lead to its cancellation.
+If you cannot attend, you can always transfer your membership to someone else. "Selling" your membership for higher than the price you paid is forbidden, and can lead to its cancellation.
 
 All transfers need to be done on May 21st latest. After this date, our list of participants is final. To transfer a membership, [write us an e-mail](mailto:camp5gathering@gmail.com) with the name and email of the recipient.
 
@@ -13,12 +13,12 @@ By registering yourself as a participant, you agree to the <a href="https://docs
 
 ### Can I come for shorter than the whole week?
 
-Absolutely. But there is only one type of membership, so it costs the same if we participate for one day, or for eight.
+Yes, but starting 2018, the last day to arrive is Thursday. Admission closes on Thursday 19:00.
 
 
 ### I need help for transport or camping!
 
-In that case we invite you to join our <a href="https://www.facebook.com/groups/camp5.rideshares.and.camping.organisation" target="_blank">Rideshares and Camping Organisation</a> Facebook group, and to write a post with what you need help with. Please also join that group if you have the possibility to help, thank you! 
+The easiest is to write about it in the Facebook group. We'll try to help as much as possible.
 
 
 ### What is the money from memberships used for?

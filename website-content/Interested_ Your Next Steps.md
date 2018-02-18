@@ -2,4 +2,4 @@
 2. Check out the [Individual and Camp checklists](#your-checklists) of what to bring with you.
 3. Get your friends on board! Camping with them is a great way to enjoy Camp5.
 4. <a href="http://camp5-2017.eventbrite.com" target="_blank">Buy one of the 80 memberships available</a>.
-5. Stay in touch with the Camp5 community via the Facebook group, and prepare for your week of off-grid camping.
+5. Why not take a moment to present yourself by writing a few words in the Facebook group? Best way to get to know each other before the event!
