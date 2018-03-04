@@ -8,7 +8,7 @@
         </div>
         <div class="centered-contents">
             <div class="subtext">
-                <p class="subtext-dates">11-18<span>June</span>2017</p>
+                <p class="subtext-dates">10-17<span>June</span>2018</p>
                 <p class="subtext-location">Åland</p>
             </div>
         </div>
@@ -23,6 +23,5 @@
             ]);
         endif;
         ?>
-        <a href="#site-header">Top</a>
     </nav>
 </header>

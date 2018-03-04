@@ -5,7 +5,7 @@ These checklists aren't exhaustive, but you should be able to survive Camp5 if y
 
 - Your usual equipment for bouldering / acroyoga / flow / slacklining
 - Tent
-- Warm camping bedding (temperature can go down to 7 degrees at night)
+- Warm camping bedding (temperatures can go down to 7 degrees at night)
 - Bathing clothes and towel
 - Torch or headlamp
 - Ecological soap and shampoo
@@ -17,6 +17,6 @@ These checklists aren't exhaustive, but you should be able to survive Camp5 if y
 - Transport to Camp5; by car is the most convenient because you’ll need to bring:
 - Enough food for the week
 - Garbage bags
-- Camping kitchen
+- A camping kitchen
 - Toilet paper
 - Paper towels

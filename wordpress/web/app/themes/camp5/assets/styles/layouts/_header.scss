@@ -111,7 +111,11 @@
 
     > .menu-item {
         display: inline-block;
-        margin-right: 0.9em;
+
+        margin-right: 1.8em;
+        &:last-child {
+            margin-right: 0;
+        }
 
         // Hiding the link to the Summary
         &:first-child {
