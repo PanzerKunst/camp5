@@ -11,6 +11,10 @@
                 "scripts/services/cbrGallery.js",
                 "scripts/controllers/common.js",
                 "scripts/controllers/index.js",
+                "scripts/controllers/checkout/checkout.js",
+                "scripts/controllers/checkout/participantListItem.js",
+                "scripts/controllers/checkout/store.js",
+                "scripts/controllers/checkout/validationError.js",
                 "scripts/main.js"
             ],
             "main": true

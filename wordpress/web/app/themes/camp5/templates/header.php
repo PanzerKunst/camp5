@@ -1,7 +1,7 @@
-<?php use Roots\Sage\BmWeekSthlm; ?>
+<?php use Roots\Sage\Camp5; ?>
 
 <header class="banner" id="site-header">
-    <div class="container" <?= BmWeekSthlm\header_style(); ?>>
+    <div class="container" <?= Camp5\header_style(); ?>>
         <h1><?php bloginfo('name'); ?></h1>
         <div class="centered-contents">
             <span class="title"><?php bloginfo('description'); ?></span>
@@ -19,7 +19,7 @@
             wp_nav_menu([
                 'theme_location' => 'primary_navigation',
                 'menu_class' => 'nav styleless',
-                'walker' => new BmWeekSthlm\Walker_Main_Menu()
+                'walker' => new Camp5\Walker_Main_Menu()
             ]);
         endif;
         ?>

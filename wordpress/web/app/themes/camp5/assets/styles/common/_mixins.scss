@@ -134,7 +134,7 @@
     background-color: color(action);
     color: color(background-body);
 
-    padding: 0.5em 3em;
+    padding: 0.5em 2em;
     border-radius: 0.1em;
 
     @include secondary-font;
@@ -147,7 +147,7 @@
     } @else if $i == 2 {
         background-color: color(secondary-action);
     } @else if $i == 3 {
-        background-color: color(primary-btn);
+        background-color: color(tertiary-action);
     } @else {
         background-color: color(text);
     }

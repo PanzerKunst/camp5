@@ -1,4 +1,4 @@
-<?php namespace Roots\Sage\BmWeekSthlm;
+<?php namespace Roots\Sage\Camp5;
 
 add_theme_support( 'custom-header' );
 
