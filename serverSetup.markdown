@@ -89,6 +89,14 @@ Replace the `bind-address` line to `bind-address = 0.0.0.0`
 `$ sudo service mysql restart`
 
 
+# Stripe
+
+`$ sudo apt-get install php-curl php-mbstring`
+
+`$ sudo service php7.0-fpm restart`
+
+
+
 # File permissions & security
 
     $ sudo adduser play www-data

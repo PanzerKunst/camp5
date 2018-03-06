@@ -9,24 +9,6 @@ button.styleless {
   }
 }
 
-a.btn,
-a:visited.btn,
-a:hover.btn {
-    @include styleless-btn;
-
-    display: inline-block;
-
-    color: color(background-body);
-    background-color: color(primary-btn);
-
-    text-decoration: none;
-    line-height: 1.5em;
-
-    padding: 0.4em 1em;
-    border-radius: 0.1em;
-
-    @include bottom-shadow(black, 30%);
-    &:active {
-        box-shadow: none;
-    }
+button.link {
+    text-decoration: underline;
 }

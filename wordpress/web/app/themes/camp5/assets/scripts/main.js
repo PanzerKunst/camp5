@@ -20,6 +20,8 @@
         // All pages
         common: {
             init() {
+
+                // JavaScript to be fired on all pages
                 CB.Controllers.Common.init();
             },
             finalize() {
@@ -31,13 +33,14 @@
         // Home page
         home: {
             init() {
-
-                // JavaScript to be fired on the home page
                 CB.Controllers.Index.init();
-            },
-            finalize() {
+            }
+        },
 
-                // JavaScript to be fired on the home page, after the init JS
+        // Checkout
+        checkout: {
+            init() {
+                CB.Controllers.Checkout.init();
             }
         }
     };
