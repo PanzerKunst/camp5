@@ -31,3 +31,9 @@ body.checkout div[role=main] {
 
     margin: 2em 0;
 }
+
+#note-on-possible-payment-failure {
+    font-style: italic;
+    font-size: font-size(sm);
+    margin-bottom: 3em;
+}

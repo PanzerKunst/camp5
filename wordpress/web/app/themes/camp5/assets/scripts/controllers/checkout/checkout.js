@@ -17,7 +17,7 @@ class CheckoutForm extends React.Component { // eslint-disable-line no-unused-va
 
     render() {
         return (
-            <form action="/purchase-confirmation" method="POST" id="checkout-form">
+            <form action="/purchase-confirmation" method="POST" id="checkout-form" onSubmit={this._handleFormSubmit.bind(this)}>
                 <p>This is the final step of your registration. For each participant who is 13 years or older, please fill in the following information:</p>
 
                 <ul className={"styleless"}>
@@ -31,7 +31,7 @@ class CheckoutForm extends React.Component { // eslint-disable-line no-unused-va
                 <button type="button" id="add-participant-btn" className="styleless link" onClick={this._addEmptyParticipant.bind(this)}>Add one more</button>
 
                 <div className="centered-contents">
-                    <button id="pay-btn" className="styleless" onClick={this._handlePayBtnClick.bind(this)}>Pay with Card</button>
+                    <button id="pay-btn" className="styleless">Pay with Card</button>
                 </div>
 
                 <input type="hidden" id="stripe-token" name="stripe-token" />
@@ -76,7 +76,7 @@ class CheckoutForm extends React.Component { // eslint-disable-line no-unused-va
         }
     }
 
-    _handlePayBtnClick(e) {
+    _handleFormSubmit(e) {
         e.preventDefault();
 
         if (this.store.areParticipantsValid()) {

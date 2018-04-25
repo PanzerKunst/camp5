@@ -6,4 +6,4 @@ Our campsite on Åland is only a few hundred meters away from the <a href="https
 
 It costs 500 SEK (early bird) or 850 SEK (regular price) to participate in Camp5. The money collected from memberships is used exclusively to cover expenses. We organise this gathering on a voluntary basis, and everyone is welcome to help out :)
 
-You can register **<a href="https://docs.google.com/forms/d/e/1FAIpQLScSmwCHMrxUXmnXV0dvX-KIJA0MMpOMg9aiuifu40djW3pYBg/viewform" target="_blank">here</a>**. Early bird registrations close on April 1st, and regular-priced ones close on May 20th.
+You can register **<a href="https://docs.google.com/forms/d/e/1FAIpQLScSmwCHMrxUXmnXV0dvX-KIJA0MMpOMg9aiuifu40djW3pYBg/viewform" target="_blank">here</a>**. Early bird registrations close on April 22nd, and regular-priced ones close on May 20th.
