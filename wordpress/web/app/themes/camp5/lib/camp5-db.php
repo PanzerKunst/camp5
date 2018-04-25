@@ -31,7 +31,8 @@ class Camp5Db {
           email_address VARCHAR(255) NOT NULL,
           created_at TIMESTAMP NOT NULL,
           PRIMARY KEY (id)
-        );
+        )
+        character set utf8;
 EOD;
 
         $this->conn->query($query);
