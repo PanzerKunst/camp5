@@ -4,7 +4,7 @@ CB.Controllers.CheckoutStore = {
         fullNameMinLength: 3,
         emailRegExp: /^([a-z0-9_\-.])+@([a-z0-9_\-.])+\.([a-z]{2,4})$/i
     },
-    membershipPriceInOre: 50000,
+    membershipPriceInOre: 60000,
     participants: [],
 
     addEmptyParticipant() {
