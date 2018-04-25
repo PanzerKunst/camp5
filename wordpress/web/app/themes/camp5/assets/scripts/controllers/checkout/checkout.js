@@ -82,7 +82,7 @@ class CheckoutForm extends React.Component { // eslint-disable-line no-unused-va
         if (this.store.areParticipantsValid()) {
             this.stripeHandler.open({
                 name: "Camp5",
-                description: "Membership 2018 - Regular",
+                description: "Membership 2018",
                 currency: "sek",
                 amount: this._paymentAmount(),
                 email: _.head(this.store.participants).emailAddress,
