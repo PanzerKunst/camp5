@@ -12,10 +12,10 @@ CB.Controllers.Common = {
     _initElements() {
         this.$window = $(window);
 
-        this.$siteHeader = $("#site-header");
-        this.$siteMenu = $(".nav-primary");
-        this.$scrollingAnchors = $("body").find("a[href^='#']");
-        this.$pages = $("#all-pages-as-single").children();
+        this.$siteHeader = $('#site-header');
+        this.$siteMenu = $('.nav-primary');
+        this.$scrollingAnchors = $('body').find('a[href^="#"]');
+        this.$pages = $('#all-pages-as-single').children();
     },
 
     _initEvents() {
@@ -25,30 +25,30 @@ CB.Controllers.Common = {
     },
 
     _removeEmptyParagraphTagsAddedByTheWpEditor() {
-        $("p:empty").remove();
+        $('p:empty').remove();
     },
 
     _onScroll() {
         const isScrolledDownEnough = this.$window.scrollTop() > 0;
 
-        this.$siteHeader.toggleClass("scrolled-down", isScrolledDownEnough);
+        this.$siteHeader.toggleClass('scrolled-down', isScrolledDownEnough);
     },
 
     _initPageBackgrounds() {
         _.forEach(this.$pages, page => {
             const $page = $(page);
-            const dataUrlBgImgLarge = $page.data("urlBgImgLarge");
-            const dataUrlBgImgSmall = $page.data("urlBgImgSmall");
+            const dataUrlBgImgLarge = $page.data('urlBgImgLarge');
+            const dataUrlBgImgSmall = $page.data('urlBgImgSmall');
 
             if (!CB.Services.Browser.isLargeScreen()
-                && !window.matchMedia("(min-resolution: 2dppx)").matches
+                && !window.matchMedia('(min-resolution: 2dppx)').matches
                 && dataUrlBgImgSmall) {
 
-                $page.addClass("img-bg");
-                $page.css("background-image", "url(" + dataUrlBgImgSmall + ")");
+                $page.addClass('img-bg');
+                $page.css('background-image', `url(${dataUrlBgImgSmall})`);
             } else if (dataUrlBgImgLarge) {
-                $page.addClass("img-bg");
-                $page.css("background-image", "url(" + dataUrlBgImgLarge + ")");
+                $page.addClass('img-bg');
+                $page.css('background-image', `url(${dataUrlBgImgLarge})`);
             }
         });
     }

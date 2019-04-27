@@ -21,19 +21,30 @@ body.checkout div[role=main] {
     }
 
     .remove-btn-wrapper {
-        margin-left: 1em;
         font-weight: bold;
+
+        margin: 1.7em 0 0 1em;
+        @include medium-screen {
+            margin-top: 0;
+        }
+    }
+
+    .validation-error {
+        color: color(error);
     }
 }
 
-#pay-btn {
-    @include primary-btn;
-
-    margin: 2em 0;
+#card-element {
+    margin: 2em auto 0 auto;
+    max-width: 16em;
 }
 
-#note-on-possible-payment-failure {
-    font-style: italic;
-    font-size: font-size(sm);
-    margin-bottom: 3em;
+#card-button {
+    @include primary-btn;
+    margin: 2em 0;
+
+    > .fa-spinner {
+        font-size: 1.1em;
+        margin: 0.08em 1.4em;
+    }
 }

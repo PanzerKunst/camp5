@@ -53,6 +53,8 @@ Restart PHP, open the test.php page in a browser and check that the XDebug exten
 
 Have a look at [the IntelliJ IDEA documentation on how to integrate XDebug](https://www.jetbrains.com/idea/help/configuring-xdebug.html). Make sure that the port is the same as indicated in `php.ini`.
 
+As part of the above procedure, don't forget to install the XDebug browser extension!
+
 In the menu, click on `Run > Start Listen for PHP Debug Connections`.
 
 

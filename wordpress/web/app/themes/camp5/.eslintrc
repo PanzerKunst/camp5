@@ -91,7 +91,7 @@ rules:
     no-trailing-spaces: "error"
     no-undef: "error"
     no-undef-init: "error"
-    no-undefined: "error"
+    no-undefined: "off"
     no-underscore-dangle: ["off"]
     no-unmodified-loop-condition: "error"
     no-unused-expressions: "error"
@@ -105,7 +105,7 @@ rules:
     object-shorthand: "error"
     one-var-declaration-per-line: "error"
     prefer-const: "error"
-    quotes: ["error", "double", { "allowTemplateLiterals": true }]
+    quotes: ["error", "single", { "allowTemplateLiterals": true }]
     quote-props: ["error", "as-needed"]
     radix: "error"
     require-jsdoc: "off"
@@ -155,6 +155,7 @@ globals:
     CB: true
     FB: true
     initPhotoSwipeFromDOM: true
+    Stripe: true
 
 ecmaFeatures:
     jsx: true

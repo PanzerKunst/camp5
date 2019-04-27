@@ -1,19 +1,19 @@
 ### How does membership work?
 
-Camp5 memberships are personal and your name and e-mail address must be in our system for you to participate.
+Camp5 memberships are personal and your name and e-mail must be in our system for you to participate.
 
 If you cannot attend, you can always transfer your membership to someone else. "Selling" your membership for higher than the price you paid is forbidden, and can lead to its cancellation.
 
-All transfers need to be done on May 20th latest. After this date, our list of participants is final. To transfer a membership, [write us an e-mail](mailto:camp5gathering@gmail.com) with the name and email of the recipient.
+All transfers need to be done on May 19th latest. After this date, our list of participants is final. To transfer a membership, [write us an e-mail](mailto:camp5gathering@gmail.com) with the name and email of the recipient.
 
 Children younger than 13 participate for free. Participants under 18 can only participate in the company of an adult.
 
-By registering yourself as a participant, you agree to the <a href="http://bit.ly/camp5-epa" target="_blank">Event Participation Agreement</a>. 
+By registering as a participant, you agree to the <a href="http://bit.ly/camp5-epa" target="_blank">Event Participation Agreement</a>. 
 
 
 ### Can I come for shorter than the whole week?
 
-Yes, but starting 2018, the last day to arrive is Thursday. Admission closes on Thursday 19:00.
+Yes, but the last day to arrive is Wednesday. Admission closes on Wednesday 19:00.
 
 
 ### I need help for transport or camping!

@@ -53,10 +53,10 @@
             const namespace = Sage;
 
             // eslint-disable-next-line no-undefined
-            funcname = (funcname === undefined) ? "init" : funcname;
-            fire = func !== "";
+            funcname = (funcname === undefined) ? 'init' : funcname;
+            fire = func !== '';
             fire = fire && namespace[func];
-            fire = fire && typeof namespace[func][funcname] === "function";
+            fire = fire && typeof namespace[func][funcname] === 'function';
 
             if (fire) {
                 namespace[func][funcname](args);
@@ -65,16 +65,16 @@
         loadEvents() {
 
             // Fire common init JS
-            UTIL.fire("common");
+            UTIL.fire('common');
 
             // Fire page-specific init JS, and then finalize JS
-            $.each(document.body.className.replace(/-/g, "_").split(/\s+/), (i, classnm) => {
+            $.each(document.body.className.replace(/-/g, '_').split(/\s+/), (i, classnm) => {
                 UTIL.fire(classnm);
-                UTIL.fire(classnm, "finalize");
+                UTIL.fire(classnm, 'finalize');
             });
 
             // Fire common finalize JS
-            UTIL.fire("common", "finalize");
+            UTIL.fire('common', 'finalize');
         }
     };
 

@@ -1,4 +1,9 @@
 class ParticipantListItem extends React.Component { // eslint-disable-line no-unused-vars
+    componentWillMount() {
+        this.state = {};
+        this.store = CB.Controllers.CheckoutStore;
+    }
+
     render() {
         const i = this.props.index;
         const p = this.props.participant;
@@ -10,12 +15,12 @@ class ParticipantListItem extends React.Component { // eslint-disable-line no-un
         const isEmailInvalid = this.state.isEmailInvalid || p.validationErrors.isEmail;
 
         const nameFieldClasses = classNames({
-            "form-control": true,
+            'form-control': true,
             invalid: isNameInvalid
         });
 
         const emailFieldClasses = classNames({
-            "form-control": true,
+            'form-control': true,
             invalid: isEmailInvalid
         });
 
@@ -45,11 +50,6 @@ class ParticipantListItem extends React.Component { // eslint-disable-line no-un
                 </div>
             </li>
         );
-    }
-
-    componentWillMount() {
-        this.state = {};
-        this.store = CB.Controllers.CheckoutStore;
     }
 
     _handleNameChange(e) {

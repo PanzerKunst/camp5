@@ -2,15 +2,15 @@ CB.Controllers.Index = {
     siteHeaderImgFolder: `${CB.themeRoot}/dist/images/site-header`,
 
     siteHeaderImgFileNames: [
-        "climbing.jpg",
-        "acroyoga.jpg",
-        "flow.jpg"
+        'climbing.jpg',
+        'acroyoga.jpg',
+        'flow.jpg'
     ],
 
     subtextBgColours: [
-        "rgb(224, 113, 118)",
-        "rgb(7, 163, 172)",
-        "rgb(209, 26, 86)"
+        'rgb(224, 113, 118)',
+        'rgb(7, 163, 172)',
+        'rgb(209, 26, 86)'
     ],
 
     fadeLengthMs: 1000,
@@ -25,8 +25,8 @@ CB.Controllers.Index = {
     },
 
     _initElements() {
-        this.$siteHeaderContainer = $("#site-header").children(".container");
-        this.$subtext = this.$siteHeaderContainer.find(".subtext");
+        this.$siteHeaderContainer = $('#site-header').children('.container');
+        this.$subtext = this.$siteHeaderContainer.find('.subtext');
     },
 
     _initHeaderBackground() {
@@ -77,7 +77,7 @@ CB.Controllers.Index = {
     },
 
     _updateBgImgOpacity(opacity) {
-        this.$siteHeaderContainer.css("background-image", `linear-gradient(rgba(0, 0, 0, ${opacity}), rgba(0, 0, 0, ${opacity})), url(${this.siteHeaderImgFolder}/${this.imgFileName})`);
+        this.$siteHeaderContainer.css('background-image', `linear-gradient(rgba(0, 0, 0, ${opacity}), rgba(0, 0, 0, ${opacity})), url(${this.siteHeaderImgFolder}/${this.imgFileName})`);
     },
 
     _cycleSubtextBgColour() {
@@ -93,6 +93,6 @@ CB.Controllers.Index = {
     },
 
     _fadeOutSubtextBgColour() {
-        TweenLite.to(this.$subtext, this.fadeLengthMs / 1000, {backgroundColor: "rgb(0, 0, 0)", ease: Power0.easeNone});
+        TweenLite.to(this.$subtext, this.fadeLengthMs / 1000, {backgroundColor: 'rgb(0, 0, 0)', ease: Power0.easeNone});
     }
 };

@@ -8,7 +8,7 @@
         </div>
         <div class="centered-contents">
             <div class="subtext">
-                <p class="subtext-dates">10-17<span>June</span>2018</p>
+                <p class="subtext-dates">9-16<span>June</span>2019</p>
                 <p class="subtext-location">Åland</p>
             </div>
         </div>

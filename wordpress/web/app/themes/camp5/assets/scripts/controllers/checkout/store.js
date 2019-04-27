@@ -4,22 +4,65 @@ CB.Controllers.CheckoutStore = {
         fullNameMinLength: 3,
         emailRegExp: /^([a-z0-9_\-.])+@([a-z0-9_\-.])+\.([a-z]{2,4})$/i
     },
-    membershipPriceInOre: 50000,
     participants: [],
+
+    getClientSecret() {
+        return this.stripePaymentIntent.client_secret;
+    },
+
+    getOrderAmount() {
+        return this.stripePaymentIntent.amount / 100;
+    },
+
+    getOrderCurrency() {
+        return this.stripePaymentIntent.currency.toUpperCase();
+    },
 
     addEmptyParticipant() {
         this.participants.push({
-            fullName: "",
-            emailAddress: "",
+            fullName: '',
+            emailAddress: '',
             validationErrors: {}
         });
 
         this.reactComponent.forceUpdate();
+
+        if (this.participants.length > 1) {
+            this.isWaitingForStripe = true;
+            this.reactComponent.forceUpdate();
+
+            fetch('/wp-json/camp5/v1/update-stripe-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(json => {
+                    this.stripePaymentIntent = json;
+                    this.isWaitingForStripe = false;
+                    this.reactComponent.forceUpdate();
+                });
+        }
     },
 
     removeParticipant(index) {
         this.participants.splice(index, 1);
+        this.isWaitingForStripe = true;
         this.reactComponent.forceUpdate();
+
+        fetch('/wp-json/camp5/v1/update-stripe-order', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(json => {
+                this.stripePaymentIntent = json;
+                this.isWaitingForStripe = false;
+                this.reactComponent.forceUpdate();
+            });
     },
 
     updateParticipantName(i, fullName) {
@@ -49,6 +92,21 @@ CB.Controllers.CheckoutStore = {
         this.reactComponent.forceUpdate();
 
         return isValid;
+    },
+
+    setPaymentError(message) {
+        this.paymentError = message;
+        this.isWaitingForStripe = false;
+        this.reactComponent.forceUpdate();
+    },
+
+    clearPaymentError() {
+        this.paymentError = undefined;
+        this.reactComponent.forceUpdate();
+    },
+
+    isPaymentFailed() {
+        return this.paymentError !== undefined;
     },
 
     _isParticipantNameValid(p) {

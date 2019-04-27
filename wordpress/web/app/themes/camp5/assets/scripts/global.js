@@ -19,4 +19,4 @@ CB.httpStatusCodes = {
 CB.localStorageKeys = {
 };
 
-CB.themeRoot = "app/themes/camp5";
+CB.themeRoot = 'app/themes/camp5';

@@ -1,4 +1,5 @@
 <?php namespace Roots\Sage\Camp5;
+require_once(get_template_directory() . "/stripe-init.php");
 
 add_theme_support( 'custom-header' );
 
@@ -46,6 +47,47 @@ function header_style() {
         return null;
     }
 }
+
+add_action('init', function() {
+    session_start();
+});
+
+add_action('rest_api_init', function() {
+    register_rest_route( 'camp5/v1', '/update-stripe-order', array(
+        'methods' => 'POST',
+        'callback' => 'Roots\Sage\Camp5\_update_order_add_one',
+    ) );
+
+    register_rest_route( 'camp5/v1', '/update-stripe-order', array(
+        'methods' => 'DELETE',
+        'callback' => 'Roots\Sage\Camp5\_update_order_remove_one',
+    ) );
+});
+
+function _update_order_add_one() {
+    $currentAmount = $_SESSION['stripePaymentIntent']->amount;
+    $newAmount = $currentAmount + $_SESSION['membershipPriceInOre'];
+
+    return _updateAmountAndSend($newAmount);
+}
+
+function _update_order_remove_one() {
+    $currentAmount = $_SESSION['stripePaymentIntent']->amount;
+    $newAmount = $currentAmount - $_SESSION['membershipPriceInOre'];
+
+    return _updateAmountAndSend($newAmount);
+}
+
+function _updateAmountAndSend($amount) {
+    $intentId = $_SESSION['stripePaymentIntent']->id;
+    \Stripe\PaymentIntent::update($intentId, ["amount" => $amount]);
+    $intent = \Stripe\PaymentIntent::retrieve($intentId);
+
+    $_SESSION['stripePaymentIntent'] = $intent;
+
+    return $_SESSION['stripePaymentIntent'];
+}
+
 
 class Walker_Index_All_Pages_As_Single extends \Walker_Nav_Menu {
     /**
